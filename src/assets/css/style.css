@@ -1,0 +1,798 @@
+:root {
+  --principalcolor: #B50000;
+}
+body {
+  font-family: "Heebo ExtraLight", sans-serif;
+  width: 100vw;
+  overflow-x: hidden;
+}
+header {
+  background-color: var(--principalcolor);
+  width: 100vw;
+  height: max-content;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+header .blason {
+  z-index: 2;
+  width: 75px;
+  position: absolute;
+  top: 0;
+  left: 4rem;
+}
+h1 {
+  font-size: 3rem !important;
+  text-align: center;
+}
+p {
+  font-family: "Heebo Light", sans-serif;
+  font-size: 1.2rem;
+}
+.block {
+  display: block;
+  height: 25px;
+}
+.petit_block {
+  display: block;
+  height: 5px;
+}
+main {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 175px;
+}
+footer {
+  margin-top: 75px;
+  background-color: var(--principalcolor);
+  color: white;
+  padding: 20px 20% 40px 20%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+footer h1:after {
+  content: '';
+  border-top: white solid;
+  border-top-width: 3px;
+  transition: border-top-width 0.3s;
+  width: 100%;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  z-index: -1;
+}
+footer h1:hover:after {
+  border-top: 60px solid white;
+  transition: border-top-width 0.3s;
+}
+footer h1:hover {
+  color: #000;
+  transition: color 0.3s;
+}
+footer h1 {
+  margin-left: 20px;
+  margin-right: 50px;
+  position: relative;
+  transition: color 0.3s;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  height: max-content;
+  z-index: 1;
+}
+footer div {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+footer div h1 {
+  margin-left: 0;
+}
+#home {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 125px;
+}
+#home .news {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  margin: 50px 30px 0 30px;
+}
+#home .cal {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  margin: 50px 30px 0 30px;
+}
+#home .actus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#home .actus .arrows {
+  width: 30px;
+  height: max-content;
+}
+#home .actus .arrow_r:hover {
+  transform: translateX(10px) rotate(180deg);
+  transition: transform 0.3s;
+}
+#home .actus .arrow_l:hover {
+  transform: translateX(-10px);
+  transition: transform 0.3s;
+}
+#home .actus .arrow_l {
+  transition: transform 0.3s;
+}
+#home .actus .arrow_r {
+  transform: rotate(180deg);
+  transition: transform 0.3s;
+}
+#home .actu {
+  height: 390px;
+  width: 300px;
+  display: flex;
+  align-items: flex-end;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  justify-content: center;
+}
+#home .text_actu {
+  width: 100%;
+  height: 35%;
+  background-color: rgba(181, 0, 0, 0.9);
+  border-radius: 0 0 30px 30px;
+  padding: 10px;
+  position: absolute;
+}
+#home .text_actu h2,
+#home .text_actu p {
+  margin-left: 20px;
+}
+#home .text_actu .see_more {
+  margin-left: 0;
+  margin-right: 20px;
+  text-align: end;
+}
+#home .text_actu * {
+  color: white;
+}
+@media (max-width: 375px) {
+  .actus {
+    position: relative;
+    flex-direction: column;
+  }
+  .actus .arrow_l {
+    position: absolute;
+    bottom: 0;
+    margin-right: 25px;
+  }
+  .actus .actu {
+    margin-bottom: 20px;
+  }
+  .actus .arrow_r {
+    margin-left: 25px;
+  }
+  .calendar .event {
+    width: 225px!important;
+  }
+}
+.cal_messes {
+  flex-direction: row!important;
+  justify-content: normal!important;
+}
+.cal_messes .event {
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.calendar {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.calendar .event:hover {
+  transform: translateY(-10px);
+  transition: transform 0.3s;
+}
+.calendar .event {
+  transition: transform 0.3s;
+  min-width: 200px;
+  height: 140px;
+  border-radius: 30px;
+  box-shadow: 0 4px 7px -3px black;
+  margin-bottom: 50px;
+  padding: 20px 30px;
+  width: 300px;
+}
+.calendar .event .date {
+  padding-top: 1px;
+  display: flex;
+  align-items: center;
+}
+.calendar .event .date div {
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+.calendar .event .date div hr {
+  border-top: 1px var(--principalcolor) solid;
+  width: 70px;
+}
+.calendar .event .date div .day_date,
+.calendar .event .date div .month_date {
+  font-family: "Heebo Light", sans-serif;
+  font-size: 1.5rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.calendar .event .num_date {
+  font-family: "Heebo SemiBold", sans-serif;
+  font-size: 3rem;
+  color: white;
+  background-color: var(--principalcolor);
+  width: max-content;
+  padding: 10px;
+  border-radius: 15px;
+  margin: 0 5px 15px 0;
+}
+.actu img {
+  height: 100%;
+  transition: height 0.3s;
+}
+.actu:hover img {
+  height: 120%;
+  transition: height 0.3s;
+}
+.lien_page:hover {
+  transform: translateY(-15px);
+  transition: transform 0.3s;
+}
+.lien_page:hover .img_lien {
+  height: 140%;
+  transition: height 0.3s;
+}
+.lien_page {
+  transition: transform 0.3s;
+  height: 350px;
+  display: flex;
+  align-items: flex-end;
+  border-radius: 30px;
+  margin-bottom: 40px;
+  width: 275px;
+  position: relative;
+  justify-content: center;
+}
+.lien_page a {
+  display: contents;
+}
+.lien_page .img_lien {
+  height: 120%;
+  transition: height 0.3s;
+}
+.lien_page .text_page {
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 25%;
+  background-color: rgba(181, 0, 0, 0.9);
+  border-radius: 0 0 30px 30px;
+  color: white;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lien_page .text_page h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+.lab {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+textarea {
+  width: 100%;
+  height: 200px;
+  resize: vertical;
+  border: solid var(--principalcolor) 2px;
+  border-radius: 30px;
+  font-family: "Heebo SemiBold", sans-serif !important;
+  font-size: 1.5rem !important;
+  color: black!important;
+  padding: 10px;
+}
+input {
+  width: 100%;
+  height: 30px;
+  border: solid var(--principalcolor) 2px;
+  border-radius: 30px;
+}
+input[type="text"] {
+  font-family: "Heebo SemiBold", sans-serif;
+  font-size: 1.5rem;
+  color: black;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+input:focus {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+textarea:focus {
+  padding: 10px;
+}
+label {
+  font-family: "Heebo Light", sans-serif;
+  font-size: 2rem;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+.req {
+  color: var(--principalcolor);
+  font-family: "Heebo SemiBold", sans-serif;
+}
+form {
+  width: 90%;
+}
+.bandeau div {
+  width: 275px;
+  height: 560px;
+  border: 2px solid black;
+  margin-bottom: 30px;
+}
+.bandeau {
+  margin-right: 100px;
+  margin-top: 30px;
+}
+.content {
+  display: flex!important;
+  flex-direction: row;
+  width: 91%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.pages {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: flex-start;
+}
+.pages > div {
+  margin: 30px 10px;
+  overflow: hidden;
+}
+@media (max-width: 720px) {
+  .bandeau {
+    display: none;
+  }
+  .pages {
+    justify-content: center;
+  }
+}
+.info {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#elus h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+#elus h2 {
+  margin-top: 50px;
+}
+#elus .adjoints,
+#elus .conseillers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+}
+#elus .adjoints .elu,
+#elus .conseillers .elu {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+#elus .liste_elus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#elus .liste_elus h2 {
+  font-size: 2.5rem;
+}
+#elus .liste_elus .elu {
+  overflow: hidden;
+  height: 350px;
+  display: flex;
+  align-items: flex-end;
+  border-radius: 30px;
+  margin-bottom: 40px;
+  width: 275px;
+  position: relative;
+  justify-content: center;
+}
+#elus .liste_elus .elu img {
+  height: 100%;
+}
+#elus .liste_elus .elu .nom_elu {
+  flex-direction: column;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 25%;
+  background-color: rgba(181, 0, 0, 0.9);
+  border-radius: 0 0 30px 30px;
+  color: white;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#elus .liste_elus .elu .nom_elu h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: auto;
+}
+#history h3 {
+  font-size: 1.5rem;
+}
+#history p {
+  font-size: 1.3rem;
+}
+#history .tresor hr {
+  border-top: 3px solid var(--principalcolor);
+}
+#history .tresor h2,
+#history .tresor h3 {
+  padding-bottom: 3px;
+  width: max-content;
+}
+#history .tresor .fiches_tres {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#history .tresor .tres_fiche {
+  box-shadow: 0 4px 7px -3px black;
+  border-radius: 30px;
+  padding: 15px 40px;
+  max-width: 250px;
+  margin-bottom: 50px;
+  margin-right: 20px;
+}
+#history .tresor .tres_fiche img {
+  border-radius: 15px;
+}
+.fiche_pdf {
+  box-shadow: 0 4px 7px -3px black;
+  margin-right: 40px;
+  margin-top: 20px;
+  height: max-content;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+  padding: 10px 20px;
+}
+.fiche_pdf h2 {
+  margin: auto 0 ;
+  background-color: var(--principalcolor);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 1.5rem !important;
+}
+.fiche_pdf .link_pdf {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 10px;
+}
+.fiche_pdf a {
+  color: #000;
+  font-family: "Heebo Light", sans-serif;
+  font-size: 1.4rem;
+  position: relative;
+  padding-bottom: 2px;
+}
+.fiche_pdf a:hover:after {
+  width: 100%;
+  transition: width 0.3s;
+}
+.fiche_pdf a:after {
+  content: '';
+  border-bottom: 2px solid var(--principalcolor);
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s;
+}
+.liste_pdf {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 75px;
+}
+#history h2,
+#info_dial h2 {
+  font-size: 2.5rem;
+}
+#demarches_admin h2,
+#restaurants_bar h2,
+#associations h2,
+#commerces h2 {
+  font-size: 2rem;
+}
+#demarches_admin h3,
+#restaurants_bar h3,
+#associations h3,
+#commerces h3 {
+  font-size: 1.4rem;
+  font-family: "Heebo", sans-serif;
+  color: white;
+  text-align: center;
+  background-color: var(--principalcolor);
+  border-radius: 18px;
+  padding: 10px;
+  margin-top: 0;
+}
+#demarches_admin a,
+#restaurants_bar a,
+#associations a,
+#commerces a {
+  color: black!important;
+  font-family: "Heebo Light", sans-serif;
+  font-size: 1.3rem;
+  position: relative;
+  padding-bottom: 2px;
+}
+#demarches_admin .restaurant,
+#restaurants_bar .restaurant,
+#associations .restaurant,
+#commerces .restaurant {
+  height: max-content;
+}
+#demarches_admin .fiches_demarches,
+#restaurants_bar .fiches_demarches,
+#associations .fiches_demarches,
+#commerces .fiches_demarches,
+#demarches_admin .liste_restaurants,
+#restaurants_bar .liste_restaurants,
+#associations .liste_restaurants,
+#commerces .liste_restaurants,
+#demarches_admin .assos_socio,
+#restaurants_bar .assos_socio,
+#associations .assos_socio,
+#commerces .assos_socio,
+#demarches_admin .assos_sport,
+#restaurants_bar .assos_sport,
+#associations .assos_sport,
+#commerces .assos_sport,
+#demarches_admin .commerces,
+#restaurants_bar .commerces,
+#associations .commerces,
+#commerces .commerces,
+#demarches_admin .entreprises,
+#restaurants_bar .entreprises,
+#associations .entreprises,
+#commerces .entreprises,
+#demarches_admin .artisans,
+#restaurants_bar .artisans,
+#associations .artisans,
+#commerces .artisans,
+#demarches_admin .liste_pro_sante,
+#restaurants_bar .liste_pro_sante,
+#associations .liste_pro_sante,
+#commerces .liste_pro_sante {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+#demarches_admin a:hover:after,
+#restaurants_bar a:hover:after,
+#associations a:hover:after,
+#commerces a:hover:after {
+  width: 100%;
+  transition: width 0.3s;
+}
+#demarches_admin a:after,
+#restaurants_bar a:after,
+#associations a:after,
+#commerces a:after {
+  content: '';
+  border-bottom: 2px solid var(--principalcolor);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s;
+  padding-top: 3px;
+  width: 0;
+}
+#demarches_admin .fiche_demarche,
+#restaurants_bar .fiche_demarche,
+#associations .fiche_demarche,
+#commerces .fiche_demarche,
+#demarches_admin .restaurant,
+#restaurants_bar .restaurant,
+#associations .restaurant,
+#commerces .restaurant,
+#demarches_admin .asso,
+#restaurants_bar .asso,
+#associations .asso,
+#commerces .asso,
+#demarches_admin .com_art_entr,
+#restaurants_bar .com_art_entr,
+#associations .com_art_entr,
+#commerces .com_art_entr,
+#demarches_admin .pro_sante,
+#restaurants_bar .pro_sante,
+#associations .pro_sante,
+#commerces .pro_sante {
+  box-shadow: 0 4px 7px -3px black;
+  padding: 10px 20px;
+  width: 250px;
+  border-radius: 30px;
+  margin-right: 20px;
+  margin-bottom: 15px;
+}
+#demarches_admin .fiche_demarche ul,
+#restaurants_bar .fiche_demarche ul,
+#associations .fiche_demarche ul,
+#commerces .fiche_demarche ul,
+#demarches_admin .restaurant ul,
+#restaurants_bar .restaurant ul,
+#associations .restaurant ul,
+#commerces .restaurant ul,
+#demarches_admin .asso ul,
+#restaurants_bar .asso ul,
+#associations .asso ul,
+#commerces .asso ul,
+#demarches_admin .com_art_entr ul,
+#restaurants_bar .com_art_entr ul,
+#associations .com_art_entr ul,
+#commerces .com_art_entr ul,
+#demarches_admin .pro_sante ul,
+#restaurants_bar .pro_sante ul,
+#associations .pro_sante ul,
+#commerces .pro_sante ul {
+  list-style: none;
+  padding: 0;
+}
+#demarches_admin .fiche_demarche ul li,
+#restaurants_bar .fiche_demarche ul li,
+#associations .fiche_demarche ul li,
+#commerces .fiche_demarche ul li,
+#demarches_admin .restaurant ul li,
+#restaurants_bar .restaurant ul li,
+#associations .restaurant ul li,
+#commerces .restaurant ul li,
+#demarches_admin .asso ul li,
+#restaurants_bar .asso ul li,
+#associations .asso ul li,
+#commerces .asso ul li,
+#demarches_admin .com_art_entr ul li,
+#restaurants_bar .com_art_entr ul li,
+#associations .com_art_entr ul li,
+#commerces .com_art_entr ul li,
+#demarches_admin .pro_sante ul li,
+#restaurants_bar .pro_sante ul li,
+#associations .pro_sante ul li,
+#commerces .pro_sante ul li {
+  margin-bottom: 10px;
+}
+tr .heure {
+  width: 35%;
+}
+tr td {
+  width: 65%;
+}
+@media (max-width: 720px) {
+  .eglises,
+  .info_admin,
+  .liste_info_pratiques {
+    justify-content: center;
+  }
+}
+.eglises {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.eglises .eglise {
+  box-shadow: 0 4px 7px -3px black;
+  width: 250px;
+  border-radius: 30px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.eglises .eglise img {
+  width: 90%;
+  border-radius: 15px;
+}
+.infos_biblio {
+  margin-bottom: 75px;
+}
+.cal_manif {
+  justify-content: normal;
+  margin-top: 30px;
+  flex-direction: row;
+}
+.cal_manif .event {
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.recap_seance {
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+.service {
+  border-radius: 30px;
+  box-shadow: 0 4px 7px -3px black;
+  width: 250px;
+  padding: 20px 30px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.service h2 {
+  margin: auto 0 ;
+  background-color: var(--principalcolor);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 1.5rem !important;
+}
+.info_admin,
+.liste_info_pratiques,
+.liste_info_transport,
+.tarifs,
+.pdfs_urba {
+  display: flex;
+  flex-wrap: wrap;
+}
+.info_transport a {
+  width: max-content;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.card_shadow {
+  border-radius: 30px;
+  box-shadow: 0 4px 7px -3px black;
+  width: 250px;
+  padding: 20px 30px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.card_shadow h2 {
+  margin: auto 0 ;
+  background-color: var(--principalcolor);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 1.5rem !important;
+}
+/*# sourceMappingURL=style.css.map */

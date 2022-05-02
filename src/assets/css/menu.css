@@ -1,0 +1,136 @@
+.nav-toggle {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  top: 2rem;
+  left: 5rem;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+@media (min-width: 940px) {
+  .nav-toggle {
+    display: none;
+  }
+}
+@media (max-width: 939px) {
+  header {
+    height: 75px;
+    background-color: var(--principalcolor);
+  }
+  header .blason {
+    right: 4rem;
+    left: auto;
+  }
+  .nav-toggle {
+    display: flex;
+  }
+  .nav_desk {
+    display: none;
+  }
+}
+.nav-toggle-bar,
+.nav-toggle-bar::before,
+.nav-toggle-bar::after {
+  content: "";
+  background-color: #eee;
+  width: 100%;
+  height: 0.3rem;
+  position: absolute;
+  left: 0;
+  transition: all 0.4s ease-in-out;
+}
+.nav-toggle-bar::before {
+  top: -1rem;
+}
+.nav-toggle-bar::after {
+  top: 1rem;
+}
+.menu {
+  width: 100vw;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform: translateX(-100vw);
+  transition: all 0.6s;
+  z-index: 1;
+  background-color: var(--principalcolor);
+  position: fixed;
+}
+.menu ul {
+  list-style-type: none;
+  margin-top: 125px;
+}
+.menu ul li {
+  margin-bottom: 30px;
+  margin-left: 25px;
+}
+.menu ul li a {
+  font-family: "Heebo Light", sans-serif;
+  font-size: 4rem;
+}
+.menu-open .menu {
+  transform: translateX(0);
+}
+.menu-open .nav-toggle-bar {
+  transform: rotate(135deg);
+}
+.menu-open .nav-toggle-bar::before,
+.menu-open .nav-toggle-bar::after {
+  transform: rotate(90deg);
+  top: 0;
+}
+.nav_desk {
+  width: 75%;
+}
+.nav_desk ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav_desk ul li:after {
+  content: '';
+  border-top: white solid;
+  border-top-width: 9px;
+  transition: border-top-width 0.3s;
+  width: 100%;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+}
+.nav_desk ul li:hover:after {
+  border-top: 80px solid white;
+  transition: border-top-width 0.3s;
+}
+.nav_desk ul li:hover a {
+  color: black;
+  transition: color 0.3s;
+}
+.nav_desk ul li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 75px;
+}
+.nav_desk ul li a {
+  font-size: 2rem;
+  font-family: "Heebo Light", sans-serif;
+  z-index: 1;
+  transition: color 0.3s;
+  padding: 30px 15px;
+}
+@media (max-width: 382px) {
+  .menu a {
+    font-size: 3.4rem !important;
+  }
+}
+@media (max-width: 350px) {
+  .menu a {
+    font-size: 3rem!important;
+  }
+}
+/*# sourceMappingURL=menu.css.map */
