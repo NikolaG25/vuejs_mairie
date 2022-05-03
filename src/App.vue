@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header>
-      <a href="index.html"><img class="blason" src="img/blason_mathay.png" alt="Blason de Mathay"></a>
+      <router-link to="/"><img class="blason" src="@/assets/img/blason_mathay.png" alt="Blason de Mathay"></router-link>
 
       <div class="nav_mob">
         <div class="nav-toggle" onclick='document.documentElement.classList.toggle("menu-open")'>
@@ -10,13 +10,13 @@
         <div class="menu">
 
           <ul>
-            <li><a class="link_header" href="pages/village.html">Votre village</a></li>
-            <li><a class="link_header" href="pages/mairie.html">Votre mairie</a></li>
-            <li><a class="link_header" href="pages/demarches.html">Vos démarches</a></li>
-            <li><a class="link_header" href="pages/enfance.html">Enfance/jeunesse</a></li>
-            <li><a class="link_header" href="pages/vie_loc.html">Vie locale</a></li>
-            <li><a class="link_header" href="pages/soli_sen.html">Solidarité/seniors</a></li>
-            <li><a class="link_header" href="pages/contact.html">Contact</a></li>
+            <li><router-link to="/Village" class="link_header">Votre village</router-link></li>
+            <li><router-link to="/Mairie" class="link_header">Votre mairie</router-link></li>
+            <li><router-link to="/Demarches" class="link_header">Vos démarches</router-link></li>
+            <li><router-link to="/Enfance" class="link_header">Enfance/jeunesse</router-link></li>
+            <li><router-link to="/VieLocale" class="link_header">Vie locale</router-link></li>
+            <li><router-link to="/SoliSen" class="link_header">Solidarité/seniors</router-link></li>
+            <li><router-link to="/Contact" class="link_header">Contact</router-link></li>
           </ul>
 
         </div>
@@ -24,13 +24,13 @@
 
       <div class="nav_desk">
         <ul>
-          <li><a href="pages/village.html">Votre village</a></li>
-          <li><a href="pages/mairie.html">Votre mairie</a></li>
-          <li><a href="pages/demarches.html">Vos démarches</a></li>
-          <li><a href="pages/enfance.html">Enfance/jeunesse</a></li>
-          <li><a href="pages/vie_loc.html">Vie locale</a></li>
-          <li><a href="pages/soli_sen.html">Solidarité/seniors</a></li>
-          <li><a href="pages/contact.html">Contact</a></li>
+          <li><router-link to="/Village">Votre village</router-link></li>
+          <li><router-link to="/Mairie">Votre mairie</router-link></li>
+          <li><router-link to="/Demarches">Vos démarches</router-link></li>
+          <li><router-link to="/Enfance">Enfance/jeunesse</router-link></li>
+          <li><router-link to="/VieLocale">Vie locale</router-link></li>
+          <li><router-link to="/SoliSen">Solidarité/seniors</router-link></li>
+          <li><router-link to="/Contact">Contact</router-link></li>
         </ul>
 
       </div>
@@ -86,12 +86,12 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+/*#app {*/
+/*  font-family: 'Avenir', Helvetica, Arial, sans-serif;*/
+/*  -webkit-font-smoothing: antialiased;*/
+/*  -moz-osx-font-smoothing: grayscale;*/
+/*  text-align: center;*/
+/*  color: #2c3e50;*/
+/*  margin-top: 60px;*/
+/*}*/
 </style>

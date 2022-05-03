@@ -1,113 +1,123 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
-  </div>
+  <main id="home">
+
+    <div class="news">
+      <h1>Les actualités</h1>
+      <div class="actus">
+        <img class="arrow_l arrows" src="@/assets/img/icones/fleche_gauche.svg" alt="Actualité précédente">
+        <div class="actu">
+          <img src="@/assets/img/eglise.jpg" alt="Actu1" class="img_actu">
+          <div class="text_actu">
+            <h2>Lorem ipsum</h2>
+            <p>Lorem ipsum dolor sit amet.
+              Et voluptatibus non dolorem libero hic eligendi officiis est
+              consequatur illum vel nostrum cumque sed corrupti itaque?</p>
+            <p class="see_more">Voir plus ></p>
+          </div>
+        </div>
+        <img class="arrow_r arrows" src="@/assets/img/icones/fleche_gauche.svg" alt="Actualité précédente">
+
+      </div>
+    </div>
+
+    <div class="cal">
+      <h1>Le calendrier</h1>
+      <div class="calendar">
+        <div class="first_event event">
+          <div class="date">
+            <p class="num_date">03</p>
+            <div>
+              <p class="day_date">Vendredi</p>
+              <hr>
+              <p class="month_date">Décembre</p>
+            </div>
+          </div>
+          <div class="info_cal">
+            <h2>Marché de noël</h2>
+            <p>Horaires : 8h-17h - Lieu : Salle polyvalente</p>
+          </div>
+        </div>
+        <div class="second_event event">
+          <div class="date">
+            <p class="num_date">10</p>
+            <div>
+              <p class="day_date">Mardi</p>
+              <hr>
+              <p class="month_date">Janvier</p>
+            </div>
+          </div>
+          <div class="info_cal">
+            <h2>Voeu du maire</h2>
+            <p>Horaires : 16h - Lieu : Salle polyvalente</p>
+          </div>
+        </div>
+        <div class="second_event event">
+          <div class="date">
+            <p class="num_date">10</p>
+            <div>
+              <p class="day_date">Mardi</p>
+              <hr>
+              <p class="month_date">Janvier</p>
+            </div>
+          </div>
+          <div class="info_cal">
+            <h2>Voeu du maire</h2>
+            <p>Horaires : 16h - Lieu : Salle polyvalente</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="city">
+      <h1 style="margin-top: 50px">La ville</h1>
+      <div class="town">
+        <p>Mathay est une ville située en France dans le département du
+          Doubs en <strong>Bourgogne-Franche-Comté</strong>.
+          La ville compte 2189 en 2019 (INSEE) nommés les Mathéens et les Mathéennes.
+          Elle est située à 15 minutes de <strong>Montbéliard</strong>,
+          à une heure de <strong>Besançon</strong>
+          et possède un <strong>accès direct à l'A36</strong>. </p>
+        <iframe width="100%" height="500px" frameborder="0" allowfullscreen src="//umap.openstreetmap.fr/fr/map/mathay_735503?scaleControl=true&miniMap=false&scrollWheelZoom=true&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false"></iframe><p><a href="//umap.openstreetmap.fr/fr/map/mathay_735503">Voir en plein écran</a></p>
+        <!--                <img src="img/amp_mathay.png" alt="Map Mathay">-->
+        <p>
+          Autres informations :
+          <span class="block"></span>
+          Intercommunalité : Pays de Montbéliard Agglomération
+          <span class="block"></span>
+
+          Code postal : 25700
+          <span class="block"></span>
+
+          Superficie : 14.85km²
+          <span class="block"></span>
+
+          Altitude : entre 330 et 551 mètres
+          <span class="block"></span>
+
+          Latitude : 47° 26' 16" Nord
+          <span class="block"></span>
+
+          Longitude : 6° 47' 02" Est
+        </p>
+      </div>
+    </div>
+
+
+
+  </main>
+
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
+  name: 'Accueil',
+
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>
