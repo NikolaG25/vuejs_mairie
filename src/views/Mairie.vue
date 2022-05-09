@@ -25,10 +25,13 @@
         </div>
 
         <div class="lien_page commi">
-          <img class="img_lien" src="@/assets/img/tresor_mathay.jpg" alt="Commissions">
-          <div class="text_page">
-            <h2>Commissions</h2>
-          </div>
+          <router-link to="/Mairie/commissions">
+            <img class="img_lien" src="@/assets/img/tresor_mathay.jpg" alt="Commissions">
+            <div class="text_page">
+              <h2>Commissions</h2>
+            </div>
+          </router-link>
+
         </div>
         <div class="lien_page serv_muni">
 
@@ -56,13 +59,6 @@
           <img class="img_lien" src="@/assets/img/tresor_mathay.jpg" alt="Arrêtés en cours">
           <div class="text_page">
             <h2>Arrêtés en cours</h2>
-          </div>
-
-        </div>
-        <div class="lien_page marche">
-          <img class="img_lien" src="@/assets/img/tresor_mathay.jpg" alt="Marchés publics">
-          <div class="text_page">
-            <h2>Marchés publics</h2>
           </div>
 
         </div>

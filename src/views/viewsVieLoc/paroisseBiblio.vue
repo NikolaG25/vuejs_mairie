@@ -39,32 +39,32 @@
             Solmont, Dambelin et Goux les Dambelin. Et trois chapelles à Mathay, Vermondans et Chatey
           </p>
           <div class="eglises">
-            <div class="eglise">
+            <div class="eglise img_titre">
               <h2>Église de Pont de Roide</h2>
               <img src="@/assets/img/eglise/Pont-de-Roide_eglise.jpg" alt="Église de Pont de Roide">
             </div>
 
-            <div class="eglise">
+            <div class="eglise img_titre">
               <h2>Église de Mathay</h2>
               <img src="@/assets/img/eglise.jpg" alt="Église de Mathay">
             </div>
-            <div class="eglise">
+            <div class="eglise img_titre">
               <h2>Église de Bourguignon</h2>
               <img src="@/assets/img/Bourguignon_Église_Sainte-Anne.jpg" alt="Église de Bourguignon">
             </div>
-            <div class="eglise">
+            <div class="eglise img_titre">
               <h2>Église de Dampjoux</h2>
               <img src="@/assets/img/eglise/dampjoux_eglise.jpg" alt="Église de Dampjoux">
             </div>
-            <div class="eglise">
+            <div class="eglise img_titre">
               <h2>Église de Solemont</h2>
               <img src="@/assets/img/eglise/solemont_eglise.jpg" alt="Église de Solemont">
             </div>
-            <div class="eglise">
+            <div class="eglise img_titre">
               <h2>Église de Dambelin</h2>
               <img src="@/assets/img/eglise/dambelin_eglise.jpg" alt="Église de Dambelin">
             </div>
-            <div class="eglise">
+            <div class="eglise img_titre">
               <h2>Église de Goux-Les-Dambelin</h2>
               <img src="@/assets/img/eglise/goux-les-dambelin.jpg" alt="Église de Goux-Les-Dambelin">
             </div>

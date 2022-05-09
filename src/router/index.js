@@ -15,11 +15,15 @@ import Contact              from "../views/Contact";
 import demarchesAdmin       from "../views/viewsDemarches/demarchesAdmin";
 import locSalle             from "../views/viewsDemarches/locSalle";
 import Urbanisme            from "../views/viewsDemarches/Urbanisme";
+import dechets              from "../views/viewsDemarches/dechets";
+import Cimetiere            from "../views/viewsDemarches/Cimetiere";
+import Affouage             from "../views/viewsDemarches/Affouage";
 
 //import pages mairie
 import Elus                 from "../views/viewsMairie/Elus";
 import seancesConseil       from "../views/viewsMairie/seancesConseil";
 import servicesMunicipaux   from "../views/viewsMairie/servicesMunicipaux";
+import commissions          from "../views/viewsMairie/commissions";
 
 
 //import pages Vie Locale
@@ -36,6 +40,7 @@ import Transports           from "../views/viewsVieLoc/Transports";
 import geoDemo              from "../views/viewsVillage/geoDemo";
 import Histoire             from "../views/viewsVillage/Histoire";
 import mathayInfoDialogue   from "../views/viewsVillage/mathayInfoDialogue";
+import queVoirFaire         from "../views/viewsVillage/queVoirFaire";
 
 
 Vue.use(Router)
@@ -57,11 +62,16 @@ export default new Router({
     {path: '/Demarches/demarchesAdmin',         name: 'demarchesAdmin',         component: demarchesAdmin},
     {path: '/Demarches/locSalle',               name: 'locSalle',               component: locSalle},
     {path: '/Demarches/Urbanisme',              name: 'Urbanisme',              component: Urbanisme},
+    {path: '/Demarches/Dechets',                name: 'Dechets',                component: dechets},
+    {path: '/Demarches/Cimetiere',              name: 'Cimetiere',              component: Cimetiere},
+    {path: '/Demarches/Affouage',               name: 'Affouage',               component: Affouage},
 
     //routes pages mairie
     {path: '/Mairie/Elus',                      name: 'Elus',                   component: Elus},
     {path: '/Mairie/seancesConseil',            name: 'seancesConseil',         component: seancesConseil},
     {path: '/Mairie/servicesMunicipaux',        name: 'servicesMunicipaux',     component: servicesMunicipaux},
+    {path: '/Mairie/commissions',               name: 'commissions',            component: commissions},
+
 
     //routes pages Vie Locale
     {path: '/VieLocale/Associations',           name: 'Associations',           component: Associations},
@@ -76,6 +86,7 @@ export default new Router({
     {path: '/Village/geoDemo',                  name: 'geoDemo',                component: geoDemo},
     {path: '/Village/Histoire',                 name: 'Histoire',               component: Histoire},
     {path: '/Village/mathayInfoDialogue',       name: 'mathayInfoDialogue',     component: mathayInfoDialogue},
+    {path: '/Village/queVoirFaire',             name: 'queVoirFaire',           component: queVoirFaire},
 
   ]
 })

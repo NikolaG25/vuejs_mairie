@@ -45,26 +45,35 @@
         </div>
 
         <div class="lien_page dechet">
-          <img class="img_lien" src="@/assets/img/waste.jpg" alt="Déchets/encombrants">
-          <div class="text_page">
-            <h2>Déchets/encombrants</h2>
-          </div>
+          <router-link to="/Demarches/Dechets">
+            <img class="img_lien" src="@/assets/img/waste.jpg" alt="Déchets/encombrants">
+            <div class="text_page">
+              <h2>Déchets/encombrants</h2>
+            </div>
+          </router-link>
+
 
         </div>
 
         <div class="lien_page cim">
-          <img class="img_lien" src="@/assets/img/cimetiere.jpg" alt="Cimetière">
-          <div class="text_page">
-            <h2>Cimetière</h2>
-          </div>
+          <router-link to="/Demarches/Cimetiere">
+            <img class="img_lien" src="@/assets/img/cimetiere.jpg" alt="Cimetière">
+            <div class="text_page">
+              <h2>Cimetière</h2>
+            </div>
+          </router-link>
+
 
         </div>
 
         <div class="lien_page affouage">
-          <img class="img_lien" src="@/assets/img/affouage.jpg" alt="Affouage">
-          <div class="text_page">
-            <h2>Affouage</h2>
-          </div>
+          <router-link to="/Demarches/Affouage">
+            <img class="img_lien" src="@/assets/img/affouage.jpg" alt="Affouage">
+            <div class="text_page">
+              <h2>Affouage</h2>
+            </div>
+          </router-link>
+
 
         </div>
 

@@ -31,7 +31,7 @@ h1 {
 }
 p {
   font-family: "Heebo Light", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 .block {
   display: block;
@@ -46,6 +46,29 @@ main {
   margin-left: auto;
   margin-right: auto;
   margin-top: 175px;
+}
+main a {
+  color: #000;
+}
+main a:hover:after {
+  width: 100%;
+  transition: width 0.3s;
+}
+main a:after {
+  content: '';
+  border-bottom: 2px solid var(--principalcolor);
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s;
+}
+main a {
+  color: #000;
+  font-family: "Heebo Light", sans-serif;
+  font-size: 1.4rem;
+  position: relative;
+  padding-bottom: 2px;
 }
 footer {
   margin-top: 75px;
@@ -481,6 +504,7 @@ form {
 .fiche_pdf {
   box-shadow: 0 4px 7px -3px black;
   margin-right: 40px;
+  margin-bottom: 20px;
   margin-top: 20px;
   height: max-content;
   width: 250px;
@@ -715,21 +739,6 @@ tr td {
   flex-direction: row;
   flex-wrap: wrap;
 }
-.eglises .eglise {
-  box-shadow: 0 4px 7px -3px black;
-  width: 250px;
-  border-radius: 30px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-right: 20px;
-  margin-bottom: 20px;
-}
-.eglises .eglise img {
-  width: 90%;
-  border-radius: 15px;
-}
 .infos_biblio {
   margin-bottom: 75px;
 }
@@ -794,5 +803,49 @@ tr td {
   border-radius: 15px;
   text-align: center;
   font-size: 1.5rem !important;
+}
+.eglise,
+.img_titre {
+  box-shadow: 0 4px 7px -3px black;
+  width: 250px;
+  border-radius: 30px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.eglise h2,
+.img_titre h2 {
+  background-color: var(--principalcolor);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 1.5rem !important;
+  margin: auto 0 10px;
+}
+.eglise img,
+.img_titre img {
+  width: 90%;
+  border-radius: 15px;
+}
+.liste_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.tableau td {
+  width: 50%;
+  padding: 10px 20px;
+}
+.tableau td h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+.tableau tr:nth-child(2n) {
+  background-color: var(--principalcolor);
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */

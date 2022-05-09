@@ -33,11 +33,15 @@
 
         </div>
         <div class="lien_page see">
-          <img class="img_lien" src="@/assets/img/eglise.jpg" alt="Église">
 
-          <div class="text_page">
-            <h2>Que voir/faire ?</h2>
-          </div>
+          <router-link to="/Village/queVoirFaire">
+            <img class="img_lien" src="@/assets/img/eglise.jpg" alt="Église">
+
+            <div class="text_page">
+              <h2>Que voir/faire ?</h2>
+            </div>
+          </router-link>
+
 
         </div>
         <div class="lien_page info_dialogue">
