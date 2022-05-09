@@ -42,6 +42,8 @@ import Histoire             from "../views/viewsVillage/Histoire";
 import mathayInfoDialogue   from "../views/viewsVillage/mathayInfoDialogue";
 import queVoirFaire         from "../views/viewsVillage/queVoirFaire";
 
+//import pages enfance
+import Ecoles               from "../views/viewsEnfance/Ecoles";
 
 Vue.use(Router)
 
@@ -87,6 +89,10 @@ export default new Router({
     {path: '/Village/Histoire',                 name: 'Histoire',               component: Histoire},
     {path: '/Village/mathayInfoDialogue',       name: 'mathayInfoDialogue',     component: mathayInfoDialogue},
     {path: '/Village/queVoirFaire',             name: 'queVoirFaire',           component: queVoirFaire},
+
+    //routes pages enfance
+    {path: '/Enfance/Ecoles',                   name: 'Ecoles',                 component: Ecoles},
+
 
   ]
 })

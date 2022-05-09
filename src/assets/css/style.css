@@ -848,4 +848,19 @@ tr td {
   background-color: var(--principalcolor);
   color: white;
 }
+.text_img_text {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+}
+.col2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+.col2 > div {
+  margin-right: 50px;
+  margin-left: 50px;
+}
 /*# sourceMappingURL=style.css.map */
