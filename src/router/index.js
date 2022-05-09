@@ -44,6 +44,7 @@ import queVoirFaire         from "../views/viewsVillage/queVoirFaire";
 
 //import pages enfance
 import Ecoles               from "../views/viewsEnfance/Ecoles";
+import periscoRestMer       from "../views/viewsEnfance/periscoRestMer";
 
 Vue.use(Router)
 
@@ -92,6 +93,7 @@ export default new Router({
 
     //routes pages enfance
     {path: '/Enfance/Ecoles',                   name: 'Ecoles',                 component: Ecoles},
+    {path: '/Enfance/periscoRestMer',           name: 'periscoRestMer',         component: periscoRestMer},
 
 
   ]

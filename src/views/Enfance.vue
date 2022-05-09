@@ -11,19 +11,28 @@
       </div>
       <div class="pages_enfance pages">
         <div class="lien_page school">
-          <img class="img_lien" src="@/assets/img/ecole.jpg" alt="Les écoles">
-          <div class="text_page">
-            <h2>Les écoles</h2>
-          </div>
+          <router-link to="/Enfance/Ecoles">
+            <img class="img_lien" src="@/assets/img/ecole.jpg" alt="Les écoles">
+            <div class="text_page">
+              <h2>Les écoles</h2>
+            </div>
+          </router-link>
+
 
         </div>
 
         <div class="lien_page peri">
-          <img class="img_lien" src="@/assets/img/perisco.jpg" alt="Périscolaire, restauration et mercredis">
-          <div class="text_page">
-            <h2>Périscolaires, restauration et mercredis</h2>
-          </div>
+
+          <router-link to="/Enfance/periscoRestMer">
+            <img class="img_lien" src="@/assets/img/perisco.jpg" alt="Périscolaire, restauration et mercredis">
+            <div class="text_page">
+              <h2>Périscolaires, restauration et mercredis</h2>
+            </div>
+          </router-link>
+
         </div>
+
+
         <div class="lien_page centre">
           <img class="img_lien" src="@/assets/img/loisirs.jpg" alt="Centre de loisirs">
           <div class="text_page">

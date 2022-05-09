@@ -863,4 +863,19 @@ tr td {
   margin-right: 50px;
   margin-left: 50px;
 }
+.horaires {
+  text-align: center;
+}
+.horaires p {
+  background-color: var(--principalcolor);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+.horaires p:hover {
+  background-color: white;
+  color: #000;
+  transition: background-color 0.3s, color 0.3s;
+}
 /*# sourceMappingURL=style.css.map */
