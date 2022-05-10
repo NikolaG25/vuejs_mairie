@@ -24,13 +24,13 @@
 
       <div class="nav_desk">
         <ul>
-          <li><router-link to="/Village">Votre village</router-link></li>
-          <li><router-link to="/Mairie">Votre mairie</router-link></li>
-          <li><router-link to="/Demarches">Vos démarches</router-link></li>
-          <li><router-link to="/Enfance">Enfance/jeunesse</router-link></li>
-          <li><router-link to="/VieLocale">Vie locale</router-link></li>
-          <li><router-link to="/SoliSen">Solidarité/seniors</router-link></li>
-          <li><router-link to="/Contact">Contact</router-link></li>
+          <li><router-link class="link_village link_desk" to="/Village">Votre village</router-link></li>
+          <li><router-link class="link_mairie link_desk" to="/Mairie">Votre mairie</router-link></li>
+          <li><router-link class="link_demarches link_desk" to="/Demarches">Vos démarches</router-link></li>
+          <li><router-link class="link_enfance link_desk" to="/Enfance">Enfance/jeunesse</router-link></li>
+          <li><router-link class="link_vie link_desk" to="/VieLocale">Vie locale</router-link></li>
+          <li><router-link class="link_soli link_desk" to="/SoliSen">Solidarité/seniors</router-link></li>
+          <li><router-link class="link_contact link_desk" to="/Contact">Contact</router-link></li>
         </ul>
 
       </div>
@@ -58,7 +58,7 @@
           Formulaire de contact
         </p>
       </div>
-      <div class="horaires">
+      <div class="horaires_footer">
         <h1>Horaires</h1>
         <p>
           Du mardi au Vendredi :
@@ -81,17 +81,6 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
 }
 </script>
-
-<style>
-/*#app {*/
-/*  font-family: 'Avenir', Helvetica, Arial, sans-serif;*/
-/*  -webkit-font-smoothing: antialiased;*/
-/*  -moz-osx-font-smoothing: grayscale;*/
-/*  text-align: center;*/
-/*  color: #2c3e50;*/
-/*  margin-top: 60px;*/
-/*}*/
-</style>

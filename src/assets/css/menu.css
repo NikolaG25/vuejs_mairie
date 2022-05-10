@@ -110,6 +110,12 @@
   color: black;
   transition: color 0.3s;
 }
+.nav_desk ul li:active {
+  background-color: white;
+}
+.nav_desk ul li:active a {
+  color: #000;
+}
 .nav_desk ul li {
   position: relative;
   display: flex;
@@ -132,5 +138,10 @@
   .menu a {
     font-size: 3rem!important;
   }
+}
+.router-link-exact-active {
+  color: #000;
+  background-color: white;
+  transition: color 0.3s;
 }
 /*# sourceMappingURL=menu.css.map */

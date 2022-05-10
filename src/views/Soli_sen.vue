@@ -11,11 +11,12 @@
       </div>
       <div class="pages_vie_loc pages">
         <div class="lien_page ccas">
-          <img class="img_lien" src="@/assets/img/CCAS.jpg" alt="CCAS">
-          <div class="text_page">
-            <h2>CCAS</h2>
-          </div>
-
+          <router-link to="/SoliSen/ccas">
+            <img class="img_lien" src="@/assets/img/CCAS.jpg" alt="CCAS">
+            <div class="text_page">
+              <h2>CCAS</h2>
+            </div>
+          </router-link>
         </div>
 
         <div class="lien_page epic">

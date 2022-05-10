@@ -133,6 +133,13 @@
 
     }
 
+    li:active {
+      background-color: white;
+      a {
+        color: #000;
+      }
+    }
+
     li {
       position: relative;
 
@@ -168,4 +175,10 @@
     }
   }
 
+}
+
+.router-link-exact-active {
+  color: #000;
+  background-color: white;
+  transition: color .3s;
 }

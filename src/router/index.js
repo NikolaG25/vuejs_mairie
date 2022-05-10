@@ -45,6 +45,10 @@ import queVoirFaire         from "../views/viewsVillage/queVoirFaire";
 //import pages enfance
 import Ecoles               from "../views/viewsEnfance/Ecoles";
 import periscoRestMer       from "../views/viewsEnfance/periscoRestMer";
+import centreLoisirs        from "../views/viewsEnfance/centreLoisirs";
+import maisonDesJeunes      from "../views/viewsEnfance/maisonDesJeunes";
+import petiteEnfance        from "../views/viewsEnfance/petiteEnfance";
+import ccas                 from "../views/viewsEnfance/ccas";
 
 Vue.use(Router)
 
@@ -94,6 +98,12 @@ export default new Router({
     //routes pages enfance
     {path: '/Enfance/Ecoles',                   name: 'Ecoles',                 component: Ecoles},
     {path: '/Enfance/periscoRestMer',           name: 'periscoRestMer',         component: periscoRestMer},
+    {path: '/Enfance/centreLoisirs',            name: 'centreLoisirs',          component: centreLoisirs},
+    {path: '/Enfance/maisonDesJeunes',          name: 'maisonDesJeunes',        component: maisonDesJeunes},
+    {path: '/Enfance/petiteEnfance',            name: 'petiteEnfance',          component: petiteEnfance},
+
+    //routes pages soli_sen
+    {path: '/SoliSen/ccas',                     name: 'ccas',                   component: ccas},
 
 
   ]

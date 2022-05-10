@@ -34,24 +34,33 @@
 
 
         <div class="lien_page centre">
-          <img class="img_lien" src="@/assets/img/loisirs.jpg" alt="Centre de loisirs">
-          <div class="text_page">
-            <h2>Centre de loisirs</h2>
-          </div>
+          <router-link to="/Enfance/centreLoisirs">
+            <img class="img_lien" src="@/assets/img/loisirs.jpg" alt="Centre de loisirs">
+            <div class="text_page">
+              <h2>Centre de loisirs</h2>
+            </div>
+          </router-link>
+
 
         </div>
         <div class="lien_page house">
-          <img class="img_lien" src="@/assets/img/tresor_mathay.jpg" alt="Maison des jeunes">
-          <div class="text_page">
-            <h2>Maison des jeunes</h2>
-          </div>
+          <router-link to="/Enfance/maisonDesJeunes">
+            <img class="img_lien" src="@/assets/img/tresor_mathay.jpg" alt="Maison des jeunes">
+            <div class="text_page">
+              <h2>Maison des jeunes</h2>
+            </div>
+          </router-link>
+
 
         </div>
         <div class="lien_page little">
-          <img class="img_lien" src="@/assets/img/tresor_mathay.jpg" alt="Petite enfance">
-          <div class="text_page">
-            <h2>Petite enfance</h2>
-          </div>
+          <router-link to="/Enfance/petiteEnfance">
+            <img class="img_lien" src="@/assets/img/tresor_mathay.jpg" alt="Petite enfance">
+            <div class="text_page">
+              <h2>Petite enfance</h2>
+            </div>
+
+          </router-link>
 
         </div>
       </div>
