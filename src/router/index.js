@@ -42,6 +42,8 @@ import Histoire             from "../views/viewsVillage/Histoire";
 import mathayInfoDialogue   from "../views/viewsVillage/mathayInfoDialogue";
 import queVoirFaire         from "../views/viewsVillage/queVoirFaire";
 
+import pageConstructor from "../views/pageConstructor";
+
 //import pages enfance
 import Ecoles               from "../views/viewsEnfance/Ecoles";
 import periscoRestMer       from "../views/viewsEnfance/periscoRestMer";
@@ -105,6 +107,7 @@ export default new Router({
     //routes pages soli_sen
     {path: '/SoliSen/ccas',                     name: 'ccas',                   component: ccas},
 
+    {path: '/pageConstructor/:titre', name:'pageConstructor', component: pageConstructor}
 
   ]
 })

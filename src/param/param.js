@@ -1,5 +1,5 @@
 export default {
 
-  host : 'https://mairie.nikolag25.fr/wp-json/acf/v3',
+  host : 'https://mairie.nikolag25.fr/wp-json/acf/v3/',
 
 }

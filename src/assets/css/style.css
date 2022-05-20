@@ -6,17 +6,24 @@ body {
   width: 100vw;
   overflow-x: hidden;
 }
+iframe * {
+  background-color: transparent ;
+}
+.panneau_direct .player-element {
+  background-color: transparent;
+}
 header {
   background-color: var(--principalcolor);
   width: 100vw;
   height: max-content;
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
+  overflow: hidden;
 }
 header .blason {
   z-index: 2;
@@ -74,9 +81,9 @@ footer {
   margin-top: 75px;
   background-color: var(--principalcolor);
   color: white;
-  padding: 20px 20% 40px 20%;
+  padding: 20px 10% 40px 10%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 footer h1:after {
@@ -108,10 +115,11 @@ footer h1 {
   padding-right: 10px;
   height: max-content;
   z-index: 1;
+  width: max-content;
 }
 footer div {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 footer div h1 {
   margin-left: 0;
@@ -132,7 +140,7 @@ footer div h1 {
 #home .cal {
   display: flex;
   flex-direction: column;
-  width: max-content;
+  width: 60%;
   margin: 50px 30px 0 30px;
 }
 #home .actus {
@@ -220,7 +228,7 @@ footer div h1 {
 }
 .calendar {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -237,6 +245,8 @@ footer div h1 {
   margin-bottom: 50px;
   padding: 20px 30px;
   width: 300px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 .calendar .event .date {
   padding-top: 1px;
@@ -797,7 +807,7 @@ tr td {
   margin-bottom: 20px;
 }
 .card_shadow h2 {
-  margin: auto 0 ;
+  margin-top: 0;
   background-color: var(--principalcolor);
   color: white;
   padding: 10px 20px;
@@ -825,7 +835,6 @@ tr td {
   border-radius: 15px;
   text-align: center;
   font-size: 1.5rem !important;
-  margin: auto 0 10px;
 }
 .eglise img,
 .img_titre img {
@@ -867,19 +876,28 @@ tr td {
 .horaires {
   text-align: center;
 }
-.horaires p {
+.horaires .tranches_horaire {
   background-color: var(--principalcolor);
   color: white;
   padding: 10px 20px;
   border-radius: 20px;
   transition: background-color 0.3s, color 0.3s;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
-.horaires p:hover {
+.horaires .tranches_horaire:hover {
   background-color: white;
   color: #000;
   transition: background-color 0.3s, color 0.3s;
 }
 .horaires .liste_wrap {
+  justify-content: center;
+}
+.grid {
+  display: grid;
+  grid-auto-flow: row;
+}
+.bloc_horaire .liste_wrap {
   justify-content: center;
 }
 /*# sourceMappingURL=style.css.map */

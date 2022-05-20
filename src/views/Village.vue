@@ -7,53 +7,19 @@
 
     <div class="content">
       <div class="bandeau">
-        <div class="panneau"><h2>Panneau en direct</h2></div>
+        <iframe id="myiFrame" class="myiFrame" width="480" height="600" src="https://player.centaure-systems.fr/embedded/1039951bfa96267e491fd0113608350bec05aeb4"></iframe>
         <div class="clic"><h2>En un clic</h2></div>
       </div>
       <div class="pages_ville pages">
-        <div class="lien_page tres">
-          <router-link to="/Village/Histoire">
-            <img class="img_lien" src="@/assets/img/tresor_mathay.jpg" alt="Trésor de Mathay">
+        <div class="lien_page" v-for="page in listePageVillage" :key="page.id">
+          <router-link :to="{name : 'pageConstructor', params : {titre : page.acf.info_page.nom_de_la_page}}">
+            <img class="img_lien" :src="page.acf.info_page.image_de_la_page.url" :alt="page.acf.info_page.nom_de_la_page">
 
             <div class="text_page">
-              <h2>Trésor/Histoire</h2>
+              <h2>{{page.acf.info_page.nom_de_la_page}}</h2>
             </div>
           </router-link>
         </div>
-
-        <div class="lien_page geo">
-
-          <router-link to="/Village/geoDemo" >
-            <img class="img_lien" src="@/assets/img/amp_mathay.png" alt="Map Mathay">
-
-            <div class="text_page">
-              <h2>Géo/démographie</h2>
-            </div>
-          </router-link>
-
-        </div>
-        <div class="lien_page see">
-
-          <router-link to="/Village/queVoirFaire">
-            <img class="img_lien" src="@/assets/img/eglise.jpg" alt="Église">
-
-            <div class="text_page">
-              <h2>Que voir/faire ?</h2>
-            </div>
-          </router-link>
-
-
-        </div>
-        <div class="lien_page info_dialogue">
-          <router-link to="/Village/mathayInfoDialogue">
-            <img class="img_lien" src="@/assets/img/dialogue2012.jpg" alt="Mathay Info/Dialogue">
-
-            <div class="text_page">
-              <h2>Mathay Info/Dialogue</h2>
-            </div>
-          </router-link>
-        </div>
-
       </div>
     </div>
 
@@ -63,11 +29,26 @@
 </template>
 
 <script>
+import param from "@/param/param";
+
 export default {
-  name: "Village"
+  name: "Village",
+
+  data () {
+    return {
+      listePageVillage : []
+    }
+  },
+
+  created() {
+    axios.get(param.host+"pages_village")
+      .then(response => {
+        // console.log('response', response.data)
+        this.listePageVillage = response.data
+        console.log('liste page village', this.listePageVillage)
+      }).catch(error => console.log(error))
+
+  }
+
 }
 </script>
-
-<style scoped>
-
-</style>

@@ -12,56 +12,16 @@
       </div>
       <div class="pages_mairie pages">
 
-        <div class="lien_page elus">
+        <div class="lien_page" v-for="page in listePageMairie" :key="page.id">
+          <router-link :to="{name : 'pageConstructor', params : {titre : page.acf.info_page.nom_de_la_page}}">
+            <img class="img_lien" :src="page.acf.info_page.image_de_la_page.url" :alt="page.acf.info_page.nom_de_la_page">
 
-          <router-link to="/Mairie/Elus" >
-          <img class="img_lien" src="@/assets/img/tresor_mathay.jpg" alt="Les élus">
             <div class="text_page">
-              <h2>Les élus</h2>
+              <h2>{{page.acf.info_page.nom_de_la_page}}</h2>
             </div>
           </router-link>
-
-
         </div>
 
-        <div class="lien_page commi">
-          <router-link to="/Mairie/commissions">
-            <img class="img_lien" src="@/assets/img/tresor_mathay.jpg" alt="Commissions">
-            <div class="text_page">
-              <h2>Commissions</h2>
-            </div>
-          </router-link>
-
-        </div>
-        <div class="lien_page serv_muni">
-
-          <router-link to="/Mairie/servicesMunicipaux" >
-            <img class="img_lien" src="@/assets/img/tresor_mathay.jpg" alt="Services municipaux">
-            <div class="text_page">
-              <h2>Services municipaux</h2>
-            </div>
-          </router-link>
-
-
-        </div>
-        <div class="lien_page seance_cons">
-
-          <router-link to="/Mairie/seancesConseil" >
-            <img class="img_lien" src="@/assets/img/tresor_mathay.jpg" alt="Séances du conseil">
-            <div class="text_page">
-              <h2>Séances du conseil</h2>
-            </div>
-          </router-link>
-
-
-        </div>
-        <div class="lien_page arretes">
-          <img class="img_lien" src="@/assets/img/tresor_mathay.jpg" alt="Arrêtés en cours">
-          <div class="text_page">
-            <h2>Arrêtés en cours</h2>
-          </div>
-
-        </div>
       </div>
     </div>
 
@@ -70,8 +30,26 @@
 </template>
 
 <script>
+import param from "@/param/param";
+
 export default {
-  name: "Mairie"
+  name: "Mairie",
+
+  data () {
+    return {
+      listePageMairie : []
+    }
+  },
+
+  created() {
+    axios.get(param.host+"pages_mairie")
+      .then(response => {
+        // console.log('response', response.data)
+        this.listePageMairie = response.data
+        console.log('liste page mairie', this.listePageMairie)
+      }).catch(error => console.log(error))
+
+  }
 }
 </script>
 

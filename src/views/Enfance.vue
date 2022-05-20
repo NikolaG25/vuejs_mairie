@@ -10,59 +10,16 @@
         <div class="clic"><h2>En un clic</h2></div>
       </div>
       <div class="pages_enfance pages">
-        <div class="lien_page school">
-          <router-link to="/Enfance/Ecoles">
-            <img class="img_lien" src="@/assets/img/ecole.jpg" alt="Les écoles">
+        <div class="lien_page" v-for="page in listePageEnfance" :key="page.id">
+          <router-link :to="{name : 'pageConstructor', params : {titre : page.acf.info_page.nom_de_la_page}}">
+            <img class="img_lien" :src="page.acf.info_page.image_de_la_page.url" :alt="page.acf.info_page.nom_de_la_page">
+
             <div class="text_page">
-              <h2>Les écoles</h2>
+              <h2>{{page.acf.info_page.nom_de_la_page}}</h2>
             </div>
           </router-link>
-
-
         </div>
 
-        <div class="lien_page peri">
-
-          <router-link to="/Enfance/periscoRestMer">
-            <img class="img_lien" src="@/assets/img/perisco.jpg" alt="Périscolaire, restauration et mercredis">
-            <div class="text_page">
-              <h2>Périscolaires, restauration et mercredis</h2>
-            </div>
-          </router-link>
-
-        </div>
-
-
-        <div class="lien_page centre">
-          <router-link to="/Enfance/centreLoisirs">
-            <img class="img_lien" src="@/assets/img/loisirs.jpg" alt="Centre de loisirs">
-            <div class="text_page">
-              <h2>Centre de loisirs</h2>
-            </div>
-          </router-link>
-
-
-        </div>
-        <div class="lien_page house">
-          <router-link to="/Enfance/maisonDesJeunes">
-            <img class="img_lien" src="@/assets/img/tresor_mathay.jpg" alt="Maison des jeunes">
-            <div class="text_page">
-              <h2>Maison des jeunes</h2>
-            </div>
-          </router-link>
-
-
-        </div>
-        <div class="lien_page little">
-          <router-link to="/Enfance/petiteEnfance">
-            <img class="img_lien" src="@/assets/img/tresor_mathay.jpg" alt="Petite enfance">
-            <div class="text_page">
-              <h2>Petite enfance</h2>
-            </div>
-
-          </router-link>
-
-        </div>
       </div>
     </div>
 
@@ -71,8 +28,26 @@
 </template>
 
 <script>
+import param from "@/param/param";
+
 export default {
-  name: "Enfance"
+  name: "Enfance",
+
+  data () {
+    return {
+      listePageEnfance : []
+    }
+  },
+
+  created() {
+    axios.get(param.host+"pages_enfance")
+      .then(response => {
+        // console.log('response', response.data)
+        this.listePageEnfance = response.data
+        console.log('liste page enfance', this.listePageEnfance)
+      }).catch(error => console.log(error))
+
+  }
 }
 </script>
 

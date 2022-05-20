@@ -10,78 +10,14 @@
         <div class="clic"><h2>En un clic</h2></div>
       </div>
       <div class="pages_vie_loc pages">
-        <div class="lien_page rest">
-          <router-link to="/VieLocale/restaurantsBars">
-            <img class="img_lien" src="@/assets/img/christis.jpg" alt="Restaurants/bars">
+        <div class="lien_page" v-for="page in listePageVieLoc" :key="page.id">
+          <router-link :to="{name : 'pageConstructor', params : {titre : page.acf.info_page.nom_de_la_page}}">
+            <img class="img_lien" :src="page.acf.info_page.image_de_la_page.url" :alt="page.acf.info_page.nom_de_la_page">
+
             <div class="text_page">
-              <h2>Restaurants/bars</h2>
+              <h2>{{page.acf.info_page.nom_de_la_page}}</h2>
             </div>
           </router-link>
-
-        </div>
-
-        <div class="lien_page asso">
-          <router-link to="/VieLocale/Associations">
-            <img class="img_lien" src="@/assets/img/asso.jpg" alt="Associations">
-            <div class="text_page">
-              <h2>Associations</h2>
-            </div>
-          </router-link>
-
-        </div>
-
-        <div class="lien_page commerces">
-          <router-link to="/VieLocale/Commerces" >
-            <img class="img_lien" src="@/assets/img/colruyt.jpg" alt="Commerces/entreprises/artisans">
-            <div class="text_page">
-              <h2>Commerces/ entreprises/artisans</h2>
-            </div>
-          </router-link>
-
-
-        </div>
-
-        <div class="lien_page pro_health">
-          <router-link to="/VieLocale/proSante" >
-            <img class="img_lien" src="@/assets/img/medecin.jpg" alt="Professionnels de santé">
-            <div class="text_page">
-              <h2>Professionnels de santé</h2>
-            </div>
-          </router-link>
-
-
-        </div>
-
-        <div class="lien_page paroisse">
-          <router-link to="/VieLocale/paroisseBiblio" >
-            <img class="img_lien" src="@/assets/img/eglise.jpg" alt="Paroisse">
-            <div class="text_page">
-              <h2>Paroisse/Bibliothèque</h2>
-            </div>
-          </router-link>
-        </div>
-
-        <div class="lien_page transport">
-          <router-link to="/VieLocale/Transports" >
-            <img class="img_lien" src="@/assets/img/evolity.jpg" alt="Transports">
-            <div class="text_page">
-              <h2>Transports</h2>
-            </div>
-          </router-link>
-
-
-        </div>
-
-
-        <div class="lien_page calendar_event">
-          <router-link to="/VieLocale/calManif" >
-            <img class="img_lien" src="@/assets/img/calendrier.jpg" alt="Calendrier des manifestations">
-            <div class="text_page">
-              <h2>Calendrier des manifestations</h2>
-            </div>
-          </router-link>
-
-
         </div>
 
       </div>
@@ -92,8 +28,27 @@
 </template>
 
 <script>
+import param from "@/param/param";
+
 export default {
-  name: "VieLocale"
+  name: "VieLocale",
+
+  data () {
+    return {
+      listePageVieLoc : []
+    }
+  },
+
+  created() {
+    axios.get(param.host+"pages_vie_loc")
+      .then(response => {
+        // console.log('response', response.data)
+        this.listePageVieLoc = response.data
+        console.log('liste page village', this.listePageVieLoc)
+      }).catch(error => console.log(error))
+
+  }
+
 }
 </script>
 

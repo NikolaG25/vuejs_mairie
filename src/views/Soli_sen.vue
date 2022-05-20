@@ -10,29 +10,17 @@
         <div class="clic"><h2>En un clic</h2></div>
       </div>
       <div class="pages_vie_loc pages">
-        <div class="lien_page ccas">
-          <router-link to="/SoliSen/ccas">
-            <img class="img_lien" src="@/assets/img/CCAS.jpg" alt="CCAS">
+        <div class="lien_page" v-for="page in listePageSoliSen" :key="page.id">
+          <router-link :to="{name : 'pageConstructor', params : {titre : page.acf.info_page.nom_de_la_page}}">
+            <img class="img_lien" :src="page.acf.info_page.image_de_la_page.url" :alt="page.acf.info_page.nom_de_la_page">
+
             <div class="text_page">
-              <h2>CCAS</h2>
+              <h2>{{page.acf.info_page.nom_de_la_page}}</h2>
             </div>
           </router-link>
         </div>
 
-        <div class="lien_page epic">
-          <img class="img_lien" src="@/assets/img/epicerie.jpg" alt="Épicerie solidaire">
-          <div class="text_page">
-            <h2>Épicerie solidaire</h2>
-          </div>
-        </div>
 
-        <div class="lien_page seniors">
-          <img class="img_lien" src="@/assets/img/seniors.jpg" alt="Ateliers seniors">
-          <div class="text_page">
-            <h2>Ateliers seniors</h2>
-          </div>
-
-        </div>
       </div>
     </div>
 
@@ -41,11 +29,26 @@
 </template>
 
 <script>
+import param from "@/param/param";
+
 export default {
-  name: "SoliSen"
+  name: "SoliSen",
+
+  data () {
+    return {
+      listePageSoliSen : []
+    }
+  },
+
+  created() {
+    axios.get(param.host+"pages_solidarite_sen")
+      .then(response => {
+        // console.log('response', response.data)
+        this.listePageSoliSen = response.data
+        console.log('liste page soli', this.listePageSoliSen)
+      }).catch(error => console.log(error))
+
+  }
+
 }
 </script>
-
-<style scoped>
-
-</style>
