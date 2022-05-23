@@ -107,7 +107,13 @@ export default new Router({
     //routes pages soli_sen
     {path: '/SoliSen/ccas',                     name: 'ccas',                   component: ccas},
 
-    {path: '/pageConstructor/:titre', name:'pageConstructor', component: pageConstructor}
+    {path: '/Enfance/:id', name:'pageConstructorEnfance', component: pageConstructor},
+    {path: '/Village/:id', name:'pageConstructorVillage', component: pageConstructor},
+    {path: '/VieLocale/:id', name:'pageConstructorVieLocale', component: pageConstructor},
+    {path: '/Mairie/:id', name:'pageConstructorMairie', component: pageConstructor},
+    {path: '/Demarches/:id', name:'pageConstructorDemarches', component: pageConstructor},
+    {path: '/SoliSen/:id', name:'pageConstructorSoliSen', component: pageConstructor},
+
 
   ]
 })

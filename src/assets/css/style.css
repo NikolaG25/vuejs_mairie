@@ -897,7 +897,39 @@ tr td {
   display: grid;
   grid-auto-flow: row;
 }
+.bloc_horaire h2 {
+  text-align: center;
+}
 .bloc_horaire .liste_wrap {
   justify-content: center;
+}
+.bloc_resto_asso h2 {
+  font-size: 2rem;
+}
+.fiche_resto_asso {
+  box-shadow: 0 4px 7px -3px black;
+  padding: 10px 20px;
+  width: 250px;
+  border-radius: 30px;
+  margin-right: 20px;
+  margin-bottom: 15px;
+  height: max-content;
+}
+.fiche_resto_asso h3 {
+  font-size: 1.4rem;
+  font-family: "Heebo", sans-serif;
+  color: white;
+  text-align: center;
+  background-color: var(--principalcolor);
+  border-radius: 18px;
+  padding: 10px;
+  margin-top: 0;
+}
+.fiche_resto_asso ul {
+  list-style: none;
+  padding: 0;
+}
+.fiche_resto_asso ul li {
+  margin-bottom: 10px;
 }
 /*# sourceMappingURL=style.css.map */

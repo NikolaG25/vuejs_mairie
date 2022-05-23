@@ -11,7 +11,7 @@
       </div>
       <div class="pages_enfance pages">
         <div class="lien_page" v-for="page in listePageEnfance" :key="page.id">
-          <router-link :to="{name : 'pageConstructor', params : {titre : page.acf.info_page.nom_de_la_page}}">
+          <router-link :to="{name : 'pageConstructorEnfance', params : {id : page.id}}">
             <img class="img_lien" :src="page.acf.info_page.image_de_la_page.url" :alt="page.acf.info_page.nom_de_la_page">
 
             <div class="text_page">
