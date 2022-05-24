@@ -19,8 +19,8 @@
 
         <div class="zoneFichier" v-for="zone_fichier in listeZoneFichier" :key="zone_fichier.titre" :style="{'grid-row': zone_fichier.place_sur_la_grille}">
           <div class="bloc_fichier" v-for="bloc_fichier in zone_fichier.bloc_fichier_zip_dossier" :key="bloc_fichier.titre">
-            <h2>{{bloc_fichier.titre}}</h2>
-            <p>{{bloc_fichier.paragraphes_avant_liste_fichiers_dossiers}}</p>
+            <h2 v-if="bloc_fichier.titre !== ''">{{bloc_fichier.titre}}</h2>
+            <p v-if="bloc_fichier.paragraphes_avant_liste_fichiers_dossiers !== ''">{{bloc_fichier.paragraphes_avant_liste_fichiers_dossiers}}</p>
             <div class="liste_wrap">
               <div class="fiche_pdf" v-for="fiche_pdf in bloc_fichier.liste_fiches_fichier_zip_dossier" :key="fiche_pdf.titre_fichier_zip_dossier">
                 <h2>{{fiche_pdf.titre_fichier_zip_dossier}}</h2>
@@ -34,7 +34,7 @@
               </div>
 
             </div>
-            <p>{{bloc_fichier.paragraphes_apres_liste_fichiers_dossiers}}</p>
+            <p v-if="bloc_fichier.paragraphes_apres_liste_fichiers_dossiers !== ''">{{bloc_fichier.paragraphes_apres_liste_fichiers_dossiers}}</p>
           </div>
         </div>
 
@@ -219,6 +219,33 @@
           </div>
         </div>
 
+        <div class="zonePersonne" v-for="zone_persone in listeZonePersonnes" :style="{'grid-row': zone_persone.place_sur_la_grille}">
+          <div class="bloc_personne" v-for="bloc_personne in zone_persone.bloc_personne">
+            <h2>{{bloc_personne.titre_bloc_personne}}</h2>
+            <div class="liste_wrap">
+              <div class="elu" v-for="personne in bloc_personne.liste_fiche_personne">
+                <img :src="personne.fiche_personne.image_personne.url" :alt="personne.fiche_personne.nom_prenom_personne" class="img_elu">
+                <div class="nom_elu">
+                  <h2>{{personne.fiche_personne.nom_prenom_personne}}</h2>
+                  <p>{{personne.fiche_personne.poste_personne}}</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="zonePhraseLien" v-for="zone_phrase_lien in listeZonePhrasesLien" :style="{'grid-row': zone_phrase_lien.place_sur_la_grille}">
+          <div class="bloc_phrase_lien" v-for="bloc_phrase_lien in zone_phrase_lien.bloc_phrase_avec_lien">
+            <h2 v-if="bloc_phrase_lien.titre !== ''">{{bloc_phrase_lien.titre}}</h2>
+            <p v-if="para_avant.paragraphe_avant_phrase_avec_lien !==''" v-for="para_avant in bloc_phrase_lien.paragraphes_avant_phrase_avec_lien">{{para_avant.paragraphe_avant_phrase_avec_lien}}</p>
+            <p v-for="phrase_lien in bloc_phrase_lien.zone_phrase_avec_lien">{{phrase_lien.phrase}}&nbsp;<a
+              :href="phrase_lien.lien" target="_blank">{{phrase_lien.texte_du_lien}}</a></p>
+            <p v-for="para_apres in bloc_phrase_lien.paragraphes_apres_phrase_avec_lien" v-if="para_apres.paragraphe_apres_phrase_avec_lien !== ''">{{para_apres.paragraphe_apres_phrase_avec_lien}}</p>
+
+          </div>
+        </div>
+
       </div>
 
     </div>
@@ -252,7 +279,9 @@ export default {
       listeZoneCal: [],
       listeZoneImgTxt: [],
       listeZoneService: [],
-      listeZoneTableau: []
+      listeZoneTableau: [],
+      listeZonePersonnes: [],
+      listeZonePhrasesLien: []
     }
   },
 
@@ -321,6 +350,12 @@ export default {
           if (type_bloc === 'Zone tableau') {
             this.listeZoneTableau.push(this.page.contenu_page[i])
           }
+          if (type_bloc === 'Zone personne') {
+            this.listeZonePersonnes.push(this.page.contenu_page[i])
+          }
+          if (type_bloc === 'Zone phrase avec lien') {
+            this.listeZonePhrasesLien.push(this.page.contenu_page[i])
+          }
 
 
 
@@ -344,9 +379,12 @@ export default {
         console.log('listeLien', this.listeZoneLien)
         console.log('listeImg', this.listeZoneImage)
         console.log('listeCal', this.listeZoneCal)*/
-        console.log('listeImgTxt', this.listeZoneImgTxt)
-        console.log('listeService', this.listeZoneService)
-        console.log('listeTableau', this.listeZoneTableau)
+        // console.log('listeImgTxt', this.listeZoneImgTxt)
+        // console.log('listeService', this.listeZoneService)
+        // console.log('listeTableau', this.listeZoneTableau)
+        console.log('listePersonne', this.listeZonePersonnes)
+        console.log('listePhrasesLien', this.listeZonePhrasesLien)
+
 
 
       }).catch(error => console.log(error))

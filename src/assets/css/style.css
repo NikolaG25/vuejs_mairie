@@ -424,102 +424,10 @@ form {
   margin-left: auto;
   margin-right: auto;
 }
-#elus h1 {
-  text-align: center;
-  margin-bottom: 30px;
-}
-#elus h2 {
-  margin-top: 50px;
-}
-#elus .adjoints,
-#elus .conseillers {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  flex-direction: row;
-}
-#elus .adjoints .elu,
-#elus .conseillers .elu {
-  margin-right: 20px;
-  margin-left: 20px;
-}
-#elus .liste_elus {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-#elus .liste_elus h2 {
-  font-size: 2.5rem;
-}
-#elus .liste_elus .elu {
-  overflow: hidden;
-  height: 350px;
-  display: flex;
-  align-items: flex-end;
-  border-radius: 30px;
-  margin-bottom: 40px;
-  width: 275px;
-  position: relative;
-  justify-content: center;
-}
-#elus .liste_elus .elu img {
-  height: 100%;
-}
-#elus .liste_elus .elu .nom_elu {
-  flex-direction: column;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 25%;
-  background-color: rgba(181, 0, 0, 0.9);
-  border-radius: 0 0 30px 30px;
-  color: white;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#elus .liste_elus .elu .nom_elu h2 {
-  font-size: 2rem;
-  text-align: center;
-  margin-top: auto;
-}
-#history h3 {
-  font-size: 1.5rem;
-}
-#history p {
-  font-size: 1.3rem;
-}
-#history .tresor hr {
-  border-top: 3px solid var(--principalcolor);
-}
-#history .tresor h2,
-#history .tresor h3 {
-  padding-bottom: 3px;
-  width: max-content;
-}
-#history .tresor .fiches_tres {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-#history .tresor .tres_fiche {
-  box-shadow: 0 4px 7px -3px black;
-  border-radius: 30px;
-  padding: 15px 40px;
-  max-width: 250px;
-  margin-bottom: 50px;
-  margin-right: 20px;
-}
-#history .tresor .tres_fiche img {
-  border-radius: 15px;
-}
 .fiche_pdf,
 .fiche_lien {
   box-shadow: 0 4px 7px -3px black;
   margin: 20px 10px;
-  height: max-content;
   width: 250px;
   display: flex;
   flex-direction: column;
@@ -913,6 +821,10 @@ tr td {
 .grid {
   display: grid;
   grid-auto-flow: row;
+  grid-template-rows: max-content;
+}
+.grid > div {
+  height: max-content;
 }
 .bloc_horaire h2 {
   text-align: center;
@@ -968,5 +880,41 @@ tr td {
 }
 .fiche_img_txt img {
   border-radius: 15px;
+}
+.elu {
+  overflow: hidden;
+  height: 350px;
+  display: flex;
+  align-items: flex-end;
+  border-radius: 30px;
+  margin-bottom: 40px;
+  width: 275px;
+  position: relative;
+  justify-content: center;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.elu img {
+  height: 100%;
+}
+.elu .nom_elu {
+  flex-direction: column;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 25%;
+  background-color: rgba(181, 0, 0, 0.9);
+  border-radius: 0 0 30px 30px;
+  color: white;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.elu .nom_elu h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: auto;
 }
 /*# sourceMappingURL=style.css.map */
