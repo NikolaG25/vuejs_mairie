@@ -36,6 +36,10 @@ h1 {
   font-size: 3rem !important;
   text-align: center;
 }
+h2 {
+  font-size: 2.5rem;
+  text-align: center;
+}
 p {
   font-family: "Heebo Light", sans-serif;
   font-size: 1.4rem;
@@ -407,7 +411,7 @@ form {
   margin: 30px 10px;
   overflow: hidden;
 }
-@media (max-width: 720px) {
+@media (max-width: 1090px) {
   .bandeau {
     display: none;
   }
@@ -511,19 +515,20 @@ form {
 #history .tresor .tres_fiche img {
   border-radius: 15px;
 }
-.fiche_pdf {
+.fiche_pdf,
+.fiche_lien {
   box-shadow: 0 4px 7px -3px black;
-  margin-right: 40px;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin: 20px 10px;
   height: max-content;
   width: 250px;
   display: flex;
   flex-direction: column;
   border-radius: 25px;
   padding: 10px 20px;
+  height: auto;
 }
-.fiche_pdf h2 {
+.fiche_pdf h2,
+.fiche_lien h2 {
   margin: auto 0 ;
   background-color: var(--principalcolor);
   color: white;
@@ -532,24 +537,28 @@ form {
   text-align: center;
   font-size: 1.5rem !important;
 }
-.fiche_pdf .link_pdf {
+.fiche_pdf .link_pdf,
+.fiche_lien .link_pdf {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   margin-top: 10px;
 }
-.fiche_pdf a {
+.fiche_pdf a,
+.fiche_lien a {
   color: #000;
   font-family: "Heebo Light", sans-serif;
   font-size: 1.4rem;
   position: relative;
   padding-bottom: 2px;
 }
-.fiche_pdf a:hover:after {
+.fiche_pdf a:hover:after,
+.fiche_lien a:hover:after {
   width: 100%;
   transition: width 0.3s;
 }
-.fiche_pdf a:after {
+.fiche_pdf a:after,
+.fiche_lien a:after {
   content: '';
   border-bottom: 2px solid var(--principalcolor);
   width: 0;
@@ -791,7 +800,8 @@ tr td {
   display: flex;
   flex-wrap: wrap;
 }
-.info_transport a {
+.info_transport a,
+.fiche_lien a {
   width: max-content;
   margin-top: 10px;
   margin-left: auto;
@@ -815,8 +825,7 @@ tr td {
   text-align: center;
   font-size: 1.5rem !important;
 }
-.eglise,
-.img_titre {
+.fiche_img {
   box-shadow: 0 4px 7px -3px black;
   width: 250px;
   border-radius: 30px;
@@ -827,17 +836,17 @@ tr td {
   margin-right: 20px;
   margin-bottom: 20px;
 }
-.eglise h2,
-.img_titre h2 {
+.fiche_img h2 {
   background-color: var(--principalcolor);
   color: white;
   padding: 10px 20px;
   border-radius: 15px;
   text-align: center;
   font-size: 1.5rem !important;
+  margin-top: 0 ;
+  margin-bottom: 10px;
 }
-.eglise img,
-.img_titre img {
+.fiche_img img {
   width: 90%;
   border-radius: 15px;
 }
@@ -845,12 +854,20 @@ tr td {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 20px;
+  justify-content: center;
+}
+.tableau {
+  border-collapse: collapse;
+}
+.tableau tr {
+  border: 2px solid black;
 }
 .tableau td {
   width: 50%;
   padding: 10px 20px;
+  border: 2px solid black;
 }
-.tableau td h2 {
+.tableau td p {
   text-align: center;
   font-size: 2rem;
 }
@@ -913,7 +930,6 @@ tr td {
   border-radius: 30px;
   margin-right: 20px;
   margin-bottom: 15px;
-  height: max-content;
 }
 .fiche_resto_asso h3 {
   font-size: 1.4rem;
@@ -931,5 +947,26 @@ tr td {
 }
 .fiche_resto_asso ul li {
   margin-bottom: 10px;
+}
+.fiche_img_txt {
+  box-shadow: 0 4px 7px -3px black;
+  border-radius: 30px;
+  padding: 15px 40px;
+  max-width: 250px;
+  margin-bottom: 50px;
+  margin-right: 20px;
+}
+.fiche_img_txt h2 {
+  background-color: var(--principalcolor);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 1.5rem !important;
+  margin-top: 0 ;
+  margin-bottom: 10px;
+}
+.fiche_img_txt img {
+  border-radius: 15px;
 }
 /*# sourceMappingURL=style.css.map */

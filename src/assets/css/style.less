@@ -47,6 +47,11 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
 p {
   font-family: "Heebo Light", sans-serif;
   font-size: 1.4rem;
@@ -509,7 +514,7 @@ form {
 
 }
 
-@media (max-width: 720px) {
+@media (max-width: 1090px) {
   .bandeau {
     display: none;
   }
@@ -637,18 +642,16 @@ form {
   }
 }
 
-.fiche_pdf {
+.fiche_pdf, .fiche_lien {
   box-shadow: 0 4px 7px -3px black;
-  margin-right: 40px;
-  margin-bottom: 20px;
-
-  margin-top: 20px;
+  margin: 20px 10px;
   height: max-content;
   width: 250px;
   display: flex;
   flex-direction: column;
   border-radius: 25px;
   padding: 10px 20px;
+  height: auto;
 
   h2 {
     margin: auto 0 ;
@@ -853,7 +856,7 @@ form {
   }
 
 
-  .info_transport {
+  .info_transport, .fiche_lien {
     a {
       width: max-content;
       margin-top: 10px;
@@ -882,7 +885,7 @@ form {
     }
   }
 
-.eglise, .img_titre {
+.fiche_img {
   box-shadow: 0 4px 7px -3px black;
   width: 250px;
   border-radius: 30px;
@@ -900,7 +903,8 @@ form {
     border-radius: 15px;
     text-align: center;
     font-size: 1.5rem!important;
-    //margin: auto 0 10px;
+    margin-top: 0 ;
+    margin-bottom: 10px;
   }
   img {
     width: 90%;
@@ -913,13 +917,20 @@ form {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 20px;
+  justify-content: center;
 }
 
 .tableau {
+  border-collapse: collapse;
+  tr{
+    border: 2px solid black;
+
+  }
   td {
     width: 50%;
     padding: 10px 20px;
-    h2 {
+    border: 2px solid black;
+    p {
       text-align: center;
       font-size: 2rem;
     }
@@ -997,7 +1008,6 @@ form {
   border-radius: 30px;
   margin-right: 20px;
   margin-bottom: 15px;
-  height: max-content;
 
   h3 {
     font-size: 1.4rem;
@@ -1024,4 +1034,29 @@ form {
   }
 
 
+}
+
+.fiche_img_txt  {
+  box-shadow: 0 4px 7px -3px black;
+  border-radius: 30px;
+  padding: 15px 40px;
+  max-width: 250px;
+  margin-bottom: 50px;
+  margin-right: 20px;
+
+  h2 {
+    background-color: var(--principalcolor);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 1.5rem!important;
+    margin-top: 0 ;
+    margin-bottom: 10px;
+  }
+
+
+  img {
+    border-radius: 15px;
+  }
 }
