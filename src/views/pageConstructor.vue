@@ -20,21 +20,21 @@
         <div class="zoneFichier" v-for="zone_fichier in listeZoneFichier" :key="zone_fichier.titre" :style="{'grid-row': zone_fichier.place_sur_la_grille}">
           <div class="bloc_fichier" v-for="bloc_fichier in zone_fichier.bloc_fichier_zip_dossier" :key="bloc_fichier.titre">
             <h2 v-if="bloc_fichier.titre !== ''">{{bloc_fichier.titre}}</h2>
-            <p v-if="bloc_fichier.paragraphes_avant_liste_fichiers_dossiers !== ''">{{bloc_fichier.paragraphes_avant_liste_fichiers_dossiers}}</p>
+            <p v-if="bloc_fichier.paragraphes_avant_liste_fichiers_dossiers !== ''" v-for="para_avant in bloc_fichier.paragraphes_avant_liste_fichiers_dossiers">{{para_avant.paragraphe_avant_liste_fichiers_dossiers}}</p>
             <div class="liste_wrap">
               <div class="fiche_pdf" v-for="fiche_pdf in bloc_fichier.liste_fiches_fichier_zip_dossier" :key="fiche_pdf.titre_fichier_zip_dossier">
                 <h2>{{fiche_pdf.titre_fichier_zip_dossier}}</h2>
 
-                <div class="link_pdf">
-                  <a :href="fiche_pdf.fichier_zip_dossier.url" target="_blank">Voir le PDF</a>
+                <div class="link_pdf" v-if="fiche_pdf.fichier_zip_dossier !== false">
+                  <a :href="fiche_pdf.fichier_zip_dossier.url" target="_blank">Voir le fichier</a>
 
-                  <a :href="fiche_pdf.fichier_zip_dossier.url" download>Télécharger le PDF</a>
+                  <a :href="fiche_pdf.fichier_zip_dossier.url" download>Télécharger le fichier</a>
                 </div>
 
               </div>
 
             </div>
-            <p v-if="bloc_fichier.paragraphes_apres_liste_fichiers_dossiers !== ''">{{bloc_fichier.paragraphes_apres_liste_fichiers_dossiers}}</p>
+            <p v-if="bloc_fichier.paragraphes_apres_liste_fichiers_dossiers !== ''" v-for="para_apres in bloc_fichier.paragraphes_apres_liste_fichiers_dossiers">{{para_apres.paragraphe_apres_liste_fichiers_dossiers}}</p>
           </div>
         </div>
 
@@ -45,8 +45,8 @@
               <div class="horaires card_shadow" v-for="fiche_horaire in zone_horaire.bloc_dhoraires.zone_horaire">
                 <h2>{{fiche_horaire.jours_horaire}}</h2>
                 <div class="tranches_horaire" v-for="tranche_horaire in fiche_horaire.tranches_horaires">
-                  <p>{{tranche_horaire.libelle_tanche_horaire}}</p>
-                  <p>|</p>
+                  <p v-if="tranche_horaire.libelle_tanche_horaire !==''">{{tranche_horaire.libelle_tanche_horaire}}</p>
+                  <p v-if="tranche_horaire.libelle_tanche_horaire !=='' && tranche_horaire.horaires !==''">|</p>
                   <p>{{tranche_horaire.horaires}}</p>
                 </div>
               </div>
@@ -63,6 +63,7 @@
           <div class="bloc_contact" v-for="bloc_contact in zone_contact.bloc_contact">
               <h2>Contact</h2>
               <p>{{bloc_contact.nom_de_la_personne}}</p>
+            <p>{{bloc_contact.adresse}}</p>
               <a v-for="mail in bloc_contact.adresses_mail" :href="'mailto:'+mail.adresse_mail">{{mail.adresse_mail}}</a>
 
               <p>Téléphone :
@@ -115,13 +116,15 @@
 
         <div class="zoneLien" v-for="zone_lien in listeZoneLien" :style="{'grid-row': zone_lien.place_sur_la_grille}">
           <div class="bloc_lien" v-for="bloc_lien in zone_lien.bloc_de_liens">
-            <h2>{{bloc_lien.titre}}</h2>
-            <div class="liste_wrap">
-              <div class="fiche_lien" v-for="fiche_lien in bloc_lien.liste_fiche_liens">
-                <h2>{{fiche_lien.titre_lien}}</h2>
-                <a target="_blank" :href="fiche_lien.lien">Site web</a>
+            <h2 v-if="bloc_lien.titre !== ''">{{bloc_lien.titre}}</h2>
+            <p v-for="para_avant in bloc_lien.paragraphes_avant_liste_fiche_lien" v-if="para_avant.paragraphe_avant_liste_fiche_lien !== false">{{para_avant.paragraphe_avant_liste_fiche_lien}}</p>
+            <div class="liste_wrap" v-for="liste_fiche_lien in bloc_lien.liste_fiche_liens">
+              <div class="fiche_lien" v-for="fiche_lien in liste_fiche_lien.fiche_lien">
+                <h2>{{fiche_lien.titre_fiche_lien}}</h2>
+                <a v-for="lien in fiche_lien.liens" target="_blank" :href="lien.lien">{{lien.texte_lien}}</a>
               </div>
             </div>
+            <p v-for="para_apres in bloc_lien.paragraphes_apres_liste_fiche_lien" v-if="para_apres.paragraphe_apres_liste_fiche_lien !== false">{{para_apres.paragraphe_apres_liste_fiche_lien}}</p>
 
           </div>
         </div>
@@ -246,6 +249,73 @@
           </div>
         </div>
 
+        <div class="zoneTarif" v-for="zone_tarif in listeZoneTarif" :style="{'grid-row': zone_tarif.place_sur_la_grille}">
+          <div class="bloc_tarif" v-for="bloc_tarif in zone_tarif.bloc_tarif">
+            <h2 v-if="bloc_tarif.titre !== ''">{{bloc_tarif.titre}}</h2>
+            <p v-for="para_avant in bloc_tarif.paragraphes_avant_zone_tarif" v-if="bloc_tarif.paragraphes_avant_zone_tarif !== false">
+              {{para_avant.paragraphe_avant_zone_tarif}}</p>
+           <div class="liste_wrap">
+             <div class="tarifs card_shadow" v-for="fiche_tarif in bloc_tarif.fiche_tarif">
+               <h2>{{fiche_tarif.titre_fiche_tarif}}</h2>
+               <p v-for="tarif in fiche_tarif.tarifs">{{tarif.tarif}}</p>
+
+             </div>
+
+           </div>
+            <p v-for="para_apres in bloc_tarif.paragraphes_apres_zone_tarif" v-if="bloc_tarif.paragraphes_apres_zone_tarif !== false">
+              {{para_apres.paragraphe_apres_zone_tarif}}</p>
+
+          </div>
+        </div>
+
+        <div class="zoneListe" v-for="zone_liste in listeZoneListe" :style="{'grid-row': zone_liste.place_sur_la_grille}">
+          <div class="bloc_liste" v-for="bloc_liste in zone_liste.bloc_texte_avec_liste">
+            <h2 v-if="bloc_liste.titre !== ''">{{bloc_liste.titre}}</h2>
+            <p v-if="bloc_liste.paragraphes_avant_liste !== false" v-for="para_avant in bloc_liste.paragraphes_avant_liste">{{para_avant.paragraphe_avant_liste}}</p>
+            <ul>
+              <li v-for="el_liste in bloc_liste.zone_de_liste">
+                <p>{{el_liste.element_liste}} <a v-if="el_liste.lien_element_liste !== ''" :href="el_liste.lien_element_liste">: lien</a></p>
+              </li>
+            </ul>
+            <p v-if="bloc_liste.paragraphes_apres_liste !== false" v-for="para_apres in bloc_liste.paragraphes_apres_liste">{{para_apres.paragraphe_apres_liste}}</p>
+          </div>
+        </div>
+
+        <div class="zoneVerticale" v-for="zone_verticale in listeZoneVerticale" :style="{'grid-row': zone_verticale.place_sur_la_grille}">
+          <div class="bloc_vertical" v-for="bloc_vertical in zone_verticale.bloc_vertical">
+            <h2 v-if="bloc_vertical.titre !==''">{{bloc_vertical.titre}}</h2>
+            <p v-if="bloc_vertical.paragraphes_avant_liste_bloc_vertical !== false" v-for="para_avant in bloc_vertical.paragraphes_avant_liste_bloc_vertical">{{para_avant.paragraphe_avant_liste_bloc_vertical}}</p>
+            <div class="liste_wrap col2">
+              <div class="text_img_text" v-for="text_img_text in bloc_vertical.zone_verticale">
+
+                <div class="text_left" v-for="zone_top in text_img_text.zone_au_dessus_de_limage">
+                  <h2 v-if="zone_top.titre !==''">{{zone_top.titre}}</h2>
+                  <p v-if="zone_top.paragraphes !== false" v-for="para_top in zone_top.paragraphes">
+                    {{para_top.paragraphe}}
+                  </p>
+                </div>
+
+
+                <div class="img_titre fiche_img">
+                  <h2>{{text_img_text.zone_image.titre}}</h2>
+                  <img :src="text_img_text.zone_image.image.url" :alt="text_img_text.zone_image.titre">
+                </div>
+
+                <div class="text_right" v-for="zone_bot in text_img_text.zone_en_dessous_de_limage">
+                  <h2 v-if="zone_bot.titre !==''">{{zone_bot.titre}}</h2>
+                  <p v-if="zone_bot.paragraphes !== false" v-for="para in zone_bot.paragraphes">
+                    {{para.paragraphe}}
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+            <p v-if="bloc_vertical.paragraphes_apres_liste_bloc_vertical !== false" v-for="para_apres in bloc_vertical.paragraphes_apres_liste_bloc_vertical">{{para_apres.paragraphe_apres_liste_bloc_vertical}}</p>
+
+          </div>
+        </div>
       </div>
 
     </div>
@@ -281,7 +351,8 @@ export default {
       listeZoneService: [],
       listeZoneTableau: [],
       listeZonePersonnes: [],
-      listeZonePhrasesLien: []
+      listeZonePhrasesLien: [],
+      listeZoneTarif: []
     }
   },
 
@@ -356,6 +427,9 @@ export default {
           if (type_bloc === 'Zone phrase avec lien') {
             this.listeZonePhrasesLien.push(this.page.contenu_page[i])
           }
+          if (type_bloc === 'Zone tarif') {
+            this.listeZoneTarif.push(this.page.contenu_page[i])
+          }
 
 
 
@@ -370,20 +444,23 @@ export default {
         }
         // console.log('listeBlocTxt', this.listeBlocTxt)
 
-/*        console.log('listeZoneTxt', this.listeZoneTxt)
-        console.log('listeZoneFichier', this.listeZoneFichier)
-        console.log('listeZoneHoraire', this.listeZoneHoraire)
-        console.log('listeContact', this.listeZoneContact)
-        console.log('listeResto', this.listeZoneComRest)
-        console.log('listeAsso', this.listeZoneAsso)
-        console.log('listeLien', this.listeZoneLien)
-        console.log('listeImg', this.listeZoneImage)
-        console.log('listeCal', this.listeZoneCal)*/
+        // console.log('listeZoneTxt', this.listeZoneTxt)
+        // console.log('listeZoneFichier', this.listeZoneFichier)
+        // console.log('listeZoneHoraire', this.listeZoneHoraire)
+        // console.log('listeContact', this.listeZoneContact)
+        // console.log('listeResto', this.listeZoneComRest)
+        // console.log('listeAsso', this.listeZoneAsso)
+        // console.log('listeLien', this.listeZoneLien)
+        // console.log('listeImg', this.listeZoneImage)
+        // console.log('listeCal', this.listeZoneCal)
         // console.log('listeImgTxt', this.listeZoneImgTxt)
         // console.log('listeService', this.listeZoneService)
         // console.log('listeTableau', this.listeZoneTableau)
-        console.log('listePersonne', this.listeZonePersonnes)
-        console.log('listePhrasesLien', this.listeZonePhrasesLien)
+        // console.log('listePersonne', this.listeZonePersonnes)
+        // console.log('listePhrasesLien', this.listeZonePhrasesLien)
+        // console.log('listeTarif', this.listeZoneTarif)
+        console.log('listeVerticale', this.listeZoneVerticale)
+        console.log('listeListe', this.listeZoneListe)
 
 
 

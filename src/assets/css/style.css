@@ -437,7 +437,6 @@ form {
 }
 .fiche_pdf h2,
 .fiche_lien h2 {
-  margin: auto 0 ;
   background-color: var(--principalcolor);
   color: white;
   padding: 10px 20px;
@@ -703,17 +702,13 @@ tr td {
 .info_admin,
 .liste_info_pratiques,
 .liste_info_transport,
-.tarifs,
 .pdfs_urba {
   display: flex;
   flex-wrap: wrap;
 }
 .info_transport a,
 .fiche_lien a {
-  width: max-content;
   margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
 }
 .card_shadow {
   border-radius: 30px;
