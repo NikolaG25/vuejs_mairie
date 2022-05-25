@@ -6,7 +6,7 @@
 
     <div class="content">
       <div class="bandeau">
-        <div class="panneau"><h2>Panneau en direct</h2></div>
+        <iframe id="myiFrame" class="myiFrame" width="480" height="600" src="https://player.centaure-systems.fr/embedded/1039951bfa96267e491fd0113608350bec05aeb4"></iframe>
         <div class="clic"><h2>En un clic</h2></div>
       </div>
       <div class="pages_enfance pages">

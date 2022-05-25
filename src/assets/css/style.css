@@ -23,7 +23,6 @@ header {
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
-  overflow: hidden;
 }
 header .blason {
   z-index: 2;
