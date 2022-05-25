@@ -80,7 +80,6 @@
           à une heure de <strong>Besançon</strong>
           et possède un <strong>accès direct à l'A36</strong>. </p>
         <iframe width="100%" height="500px" frameborder="0" allowfullscreen src="//umap.openstreetmap.fr/fr/map/mathay_735503?scaleControl=true&miniMap=false&scrollWheelZoom=true&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false"></iframe><p><a href="//umap.openstreetmap.fr/fr/map/mathay_735503">Voir en plein écran</a></p>
-        <!--                <img src="img/amp_mathay.png" alt="Map Mathay">-->
         <p>
           Autres informations :
           <span class="block"></span>

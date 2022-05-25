@@ -11,46 +11,7 @@ import Vie_loc              from "../views/Vie_loc";
 import Soli_sen             from "../views/Soli_sen";
 import Contact              from "../views/Contact";
 
-//import pages démarches
-import demarchesAdmin       from "../views/viewsDemarches/demarchesAdmin";
-import locSalle             from "../views/viewsDemarches/locSalle";
-import Urbanisme            from "../views/viewsDemarches/Urbanisme";
-import dechets              from "../views/viewsDemarches/dechets";
-import Cimetiere            from "../views/viewsDemarches/Cimetiere";
-import Affouage             from "../views/viewsDemarches/Affouage";
-
-//import pages mairie
-import Elus                 from "../views/viewsMairie/Elus";
-import seancesConseil       from "../views/viewsMairie/seancesConseil";
-import servicesMunicipaux   from "../views/viewsMairie/servicesMunicipaux";
-import commissions          from "../views/viewsMairie/commissions";
-
-
-//import pages Vie Locale
-import Associations         from "../views/viewsVieLoc/Associations";
-import calManif             from "../views/viewsVieLoc/calManif";
-import Commerces            from "../views/viewsVieLoc/Commerces";
-import paroisseBiblio       from "../views/viewsVieLoc/paroisseBiblio";
-import proSante             from "../views/viewsVieLoc/proSante";
-import restaurantsBars      from "../views/viewsVieLoc/restaurantsBars";
-import Transports           from "../views/viewsVieLoc/Transports";
-
-
-//import pages village
-import geoDemo              from "../views/viewsVillage/geoDemo";
-import Histoire             from "../views/viewsVillage/Histoire";
-import mathayInfoDialogue   from "../views/viewsVillage/mathayInfoDialogue";
-import queVoirFaire         from "../views/viewsVillage/queVoirFaire";
-
 import pageConstructor from "../views/pageConstructor";
-
-//import pages enfance
-import Ecoles               from "../views/viewsEnfance/Ecoles";
-import periscoRestMer       from "../views/viewsEnfance/periscoRestMer";
-import centreLoisirs        from "../views/viewsEnfance/centreLoisirs";
-import maisonDesJeunes      from "../views/viewsEnfance/maisonDesJeunes";
-import petiteEnfance        from "../views/viewsEnfance/petiteEnfance";
-import ccas                 from "../views/viewsEnfance/ccas";
 
 Vue.use(Router)
 
@@ -66,46 +27,6 @@ export default new Router({
     {path: '/VieLocale',                        name: 'VieLocale',              component: Vie_loc},
     {path: '/SoliSen',                          name: 'SoliSen',                component: Soli_sen},
     {path: '/Contact',                          name: 'Contact',                component: Contact},
-
-    //routes pages demarches
-    {path: '/Demarches/demarchesAdmin',         name: 'demarchesAdmin',         component: demarchesAdmin},
-    {path: '/Demarches/locSalle',               name: 'locSalle',               component: locSalle},
-    {path: '/Demarches/Urbanisme',              name: 'Urbanisme',              component: Urbanisme},
-    {path: '/Demarches/Dechets',                name: 'Dechets',                component: dechets},
-    {path: '/Demarches/Cimetiere',              name: 'Cimetiere',              component: Cimetiere},
-    {path: '/Demarches/Affouage',               name: 'Affouage',               component: Affouage},
-
-    //routes pages mairie
-    {path: '/Mairie/Elus',                      name: 'Elus',                   component: Elus},
-    {path: '/Mairie/seancesConseil',            name: 'seancesConseil',         component: seancesConseil},
-    {path: '/Mairie/servicesMunicipaux',        name: 'servicesMunicipaux',     component: servicesMunicipaux},
-    {path: '/Mairie/commissions',               name: 'commissions',            component: commissions},
-
-
-    //routes pages Vie Locale
-    {path: '/VieLocale/Associations',           name: 'Associations',           component: Associations},
-    {path: '/VieLocale/calManif',               name: 'calManif',               component: calManif},
-    {path: '/VieLocale/Commerces',              name: 'Commerces',              component: Commerces},
-    {path: '/VieLocale/paroisseBiblio',         name: 'paroisseBiblio',         component: paroisseBiblio},
-    {path: '/VieLocale/proSante',               name: 'proSante',               component: proSante},
-    {path: '/VieLocale/restaurantsBars',        name: 'restaurantsBars',        component: restaurantsBars},
-    {path: '/VieLocale/Transports',             name: 'Transports',             component: Transports},
-
-    //routes pages village
-    {path: '/Village/geoDemo',                  name: 'geoDemo',                component: geoDemo},
-    {path: '/Village/Histoire',                 name: 'Histoire',               component: Histoire},
-    {path: '/Village/mathayInfoDialogue',       name: 'mathayInfoDialogue',     component: mathayInfoDialogue},
-    {path: '/Village/queVoirFaire',             name: 'queVoirFaire',           component: queVoirFaire},
-
-    //routes pages enfance
-    {path: '/Enfance/Ecoles',                   name: 'Ecoles',                 component: Ecoles},
-    {path: '/Enfance/periscoRestMer',           name: 'periscoRestMer',         component: periscoRestMer},
-    {path: '/Enfance/centreLoisirs',            name: 'centreLoisirs',          component: centreLoisirs},
-    {path: '/Enfance/maisonDesJeunes',          name: 'maisonDesJeunes',        component: maisonDesJeunes},
-    {path: '/Enfance/petiteEnfance',            name: 'petiteEnfance',          component: petiteEnfance},
-
-    //routes pages soli_sen
-    {path: '/SoliSen/ccas',                     name: 'ccas',                   component: ccas},
 
     {path: '/Enfance/:id', name:'pageConstructorEnfance', component: pageConstructor},
     {path: '/Village/:id', name:'pageConstructorVillage', component: pageConstructor},

@@ -912,4 +912,12 @@ tr td {
   text-align: center;
   margin-top: auto;
 }
+.info_cal h2,
+.text_actu h2 {
+  font-size: 2rem;
+  text-align: left;
+}
+.text_actu h2 {
+  margin-top: 0;
+}
 /*# sourceMappingURL=style.css.map */
