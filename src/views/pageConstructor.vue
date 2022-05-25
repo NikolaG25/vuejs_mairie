@@ -316,6 +316,16 @@
 
           </div>
         </div>
+
+        <div class="zoneCarte" v-for="zone_carte in listeZoneCarte" :style="{'grid-row': zone_carte.place_sur_la_grille}">
+            <h2 v-if="zone_carte.bloc_carte.titre !==''">{{zone_carte.bloc_carte.titre}}</h2>
+            <p v-if="zone_carte.bloc_carte.paragraphes_avant_carte !== false" v-for="para_avant in zone_carte.bloc_carte.paragraphes_avant_carte">{{para_avant.paragraphe_avant_carte}}</p>
+            <iframe width="100%" height="500px" frameborder="0" allowfullscreen :src="zone_carte.bloc_carte.lien_carte"></iframe>
+
+            <p v-if="zone_carte.bloc_carte.paragraphes_apres_carte !== false" v-for="para_apres in zone_carte.bloc_carte.paragraphes_apres_carte">{{para_apres.paragraphe_apres_carte}}</p>
+
+
+        </div>
       </div>
 
     </div>
@@ -352,7 +362,8 @@ export default {
       listeZoneTableau: [],
       listeZonePersonnes: [],
       listeZonePhrasesLien: [],
-      listeZoneTarif: []
+      listeZoneTarif: [],
+      listeZoneCarte: []
     }
   },
 
@@ -430,6 +441,9 @@ export default {
           if (type_bloc === 'Zone tarif') {
             this.listeZoneTarif.push(this.page.contenu_page[i])
           }
+          if (type_bloc === 'Zone carte') {
+            this.listeZoneCarte.push(this.page.contenu_page[i])
+          }
 
 
 
@@ -459,8 +473,9 @@ export default {
         // console.log('listePersonne', this.listeZonePersonnes)
         // console.log('listePhrasesLien', this.listeZonePhrasesLien)
         // console.log('listeTarif', this.listeZoneTarif)
-        console.log('listeVerticale', this.listeZoneVerticale)
-        console.log('listeListe', this.listeZoneListe)
+        // console.log('listeVerticale', this.listeZoneVerticale)
+        // console.log('listeListe', this.listeZoneListe)
+        console.log('listeCarte', this.listeZoneCarte)
 
 
 
