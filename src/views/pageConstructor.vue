@@ -396,7 +396,7 @@ export default {
           if (type_bloc === "Zone d'horaires") {
             this.listeZoneHoraire.push(this.page.contenu_page[i])
           }
-          if (type_bloc === 'Zone de pdf') {
+          if (type_bloc === 'Zone de fichier') {
             this.listeZoneFichier.push(this.page.contenu_page[i])
           }
           if (type_bloc === "Zone d'image") {

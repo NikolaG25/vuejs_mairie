@@ -3,21 +3,22 @@
 
     <div class="news">
       <h1>Les actualités</h1>
-      <div class="actus">
-        <img class="arrow_l arrows" src="@/assets/img/icones/fleche_gauche.svg" alt="Actualité précédente">
-        <div class="actu">
-          <img src="@/assets/img/eglise.jpg" alt="Actu1" class="img_actu">
-          <div class="text_actu">
-            <h2>Lorem ipsum</h2>
-            <p>Lorem ipsum dolor sit amet.
-              Et voluptatibus non dolorem libero hic eligendi officiis est
-              consequatur illum vel nostrum cumque sed corrupti itaque?</p>
-            <p class="see_more">Voir plus ></p>
-          </div>
-        </div>
-        <img class="arrow_r arrows" src="@/assets/img/icones/fleche_gauche.svg" alt="Actualité précédente">
+<!--      <div class="actus">-->
+<!--        <img class="arrow_l arrows" src="@/assets/img/icones/fleche_gauche.svg" alt="Actualité précédente">-->
+<!--        <div class="actu">-->
+<!--          <img src="@/assets/img/eglise.jpg" alt="Actu1" class="img_actu">-->
+<!--          <div class="text_actu">-->
+<!--            <h2>Lorem ipsum</h2>-->
+<!--            <p>Lorem ipsum dolor sit amet.-->
+<!--              Et voluptatibus non dolorem libero hic eligendi officiis est-->
+<!--              consequatur illum vel nostrum cumque sed corrupti itaque?</p>-->
+<!--            <p class="see_more">Voir plus ></p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <img class="arrow_r arrows" src="@/assets/img/icones/fleche_gauche.svg" alt="Actualité précédente">-->
 
-      </div>
+<!--      </div>-->
+      <Slider/>
     </div>
 
     <div class="cal">
@@ -110,8 +111,12 @@
 </template>
 
 <script>
+import Slider from "@/components/Slider";
 export default {
   name: 'Accueil',
+  components: {
+    "Slider": Slider
+  }
 
 }
 </script>
