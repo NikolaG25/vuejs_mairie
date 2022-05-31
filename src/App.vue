@@ -85,13 +85,19 @@
           {{bloc_horaire.bloc_dhoraire}}
         </p>
       </div>
-      <router-link to="/PlanDuSite">
-        <h1>Plan du site</h1>
-      </router-link>
-      <router-link to="/mentionsLegales">
-        <h1>Mentions légales</h1>
+      <div class="plan_site_footer">
+        <router-link to="/PlanDuSite">
+          <h1>Plan du site</h1>
+        </router-link>
+      </div>
 
-      </router-link>
+      <div class="mention_footer">
+        <router-link to="/mentionsLegales">
+          <h1>Mentions légales</h1>
+
+        </router-link>
+      </div>
+
     </footer>
 
   </div>

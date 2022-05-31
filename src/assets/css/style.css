@@ -63,11 +63,15 @@ main {
 main a {
   color: #000;
 }
-main a:hover:after {
+main a:hover:after,
+main a:hover p:after,
+main a:hover h2:after {
   width: 100%;
   transition: width 0.3s;
 }
-main a:after {
+main a:after,
+main a p:after,
+main a h2:after {
   content: '';
   border-bottom: 2px solid var(--principalcolor);
   width: 0;
@@ -107,6 +111,14 @@ footer a h1:after {
   bottom: -1px;
   left: 0;
   z-index: -1;
+}
+footer .mention_footer a,
+footer .plan_site_footer a {
+  height: max-content;
+}
+footer .mention_footer a h1,
+footer .plan_site_footer a h1 {
+  padding: 10px!important;
 }
 footer .contact_footer a:hover:after {
   width: 100%;
@@ -743,5 +755,18 @@ tr td {
 }
 .slider {
   position: relative;
+}
+.plan h2 {
+  text-align: left;
+}
+.plan a p {
+  position: relative;
+  padding-bottom: 3px;
+  width: max-content;
+}
+.plan a h2 {
+  position: relative;
+  padding-bottom: 3px;
+  width: max-content;
 }
 /*# sourceMappingURL=style.css.map */

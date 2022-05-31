@@ -68,12 +68,12 @@ main {
     color: #000;
   }
 
-  a:hover:after {
+  a:hover:after, a:hover p:after, a:hover h2:after{
     width: 100%;
     transition: width .3s;
   }
 
-  a:after {
+  a:after,a p:after, a h2:after {
     content: '';
     border-bottom: 2px solid var(--principalcolor);
     width: 0;
@@ -120,6 +120,16 @@ footer {
     z-index: -1;
   }
 
+  .mention_footer, .plan_site_footer {
+    a {
+      height: max-content;
+      h1 {
+        padding: 10px!important;
+      }
+    }
+
+
+  }
 
   .contact_footer {
     a:hover:after {
@@ -909,4 +919,24 @@ tr {
 
 .slider {
   position: relative;
+}
+
+.plan {
+  h2 {
+    text-align: left;
+  }
+  a {
+    p {
+      position: relative;
+      padding-bottom: 3px;
+      width: max-content;
+    }
+  }
+  a {
+    h2 {
+      position: relative;
+      padding-bottom: 3px;
+      width: max-content;
+    }
+  }
 }
