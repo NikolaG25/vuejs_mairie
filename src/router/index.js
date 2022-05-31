@@ -11,7 +11,12 @@ import Vie_loc              from "../views/Vie_loc";
 import Soli_sen             from "../views/Soli_sen";
 import Contact              from "../views/Contact";
 
-import pageConstructor from "../views/pageConstructor";
+import pageConstructor      from "../views/pageConstructor";
+
+import mentionsLegales      from "../views/mentionsLegales";
+import planSite             from "../views/planSite";
+
+import calendar             from "../views/Calendar";
 
 Vue.use(Router)
 
@@ -27,6 +32,11 @@ export default new Router({
     {path: '/VieLocale',                        name: 'VieLocale',              component: Vie_loc},
     {path: '/SoliSen',                          name: 'SoliSen',                component: Soli_sen},
     {path: '/Contact',                          name: 'Contact',                component: Contact},
+
+    {path: '/PlanDuSite',                       name: 'PlanDuSite',             component: planSite},
+    {path: '/mentionsLegales',                  name: 'mentionsLegales',        component: mentionsLegales},
+
+    {path: '/Calendrier',                       name: 'Calendrier',             component: calendar},
 
     {path: '/Enfance/:id', name:'pageConstructorEnfance', component: pageConstructor},
     {path: '/Village/:id', name:'pageConstructorVillage', component: pageConstructor},

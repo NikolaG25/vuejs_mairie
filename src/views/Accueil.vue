@@ -3,70 +3,14 @@
 
     <div class="news">
       <h1>Les actualités</h1>
-<!--      <div class="actus">-->
-<!--        <img class="arrow_l arrows" src="@/assets/img/icones/fleche_gauche.svg" alt="Actualité précédente">-->
-<!--        <div class="actu">-->
-<!--          <img src="@/assets/img/eglise.jpg" alt="Actu1" class="img_actu">-->
-<!--          <div class="text_actu">-->
-<!--            <h2>Lorem ipsum</h2>-->
-<!--            <p>Lorem ipsum dolor sit amet.-->
-<!--              Et voluptatibus non dolorem libero hic eligendi officiis est-->
-<!--              consequatur illum vel nostrum cumque sed corrupti itaque?</p>-->
-<!--            <p class="see_more">Voir plus ></p>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <img class="arrow_r arrows" src="@/assets/img/icones/fleche_gauche.svg" alt="Actualité précédente">-->
-
-<!--      </div>-->
       <Slider/>
     </div>
 
     <div class="cal">
       <h1>Le calendrier</h1>
-      <div class="calendar">
-        <div class="first_event event">
-          <div class="date">
-            <p class="num_date">03</p>
-            <div>
-              <p class="day_date">Vendredi</p>
-              <hr>
-              <p class="month_date">Décembre</p>
-            </div>
-          </div>
-          <div class="info_cal">
-            <h2>Marché de noël</h2>
-            <p>Horaires : 8h-17h - Lieu : Salle polyvalente</p>
-          </div>
-        </div>
-        <div class="second_event event">
-          <div class="date">
-            <p class="num_date">10</p>
-            <div>
-              <p class="day_date">Mardi</p>
-              <hr>
-              <p class="month_date">Janvier</p>
-            </div>
-          </div>
-          <div class="info_cal">
-            <h2>Voeu du maire</h2>
-            <p>Horaires : 16h - Lieu : Salle polyvalente</p>
-          </div>
-        </div>
-        <div class="second_event event">
-          <div class="date">
-            <p class="num_date">10</p>
-            <div>
-              <p class="day_date">Mardi</p>
-              <hr>
-              <p class="month_date">Janvier</p>
-            </div>
-          </div>
-          <div class="info_cal">
-            <h2>Voeu du maire</h2>
-            <p>Horaires : 16h - Lieu : Salle polyvalente</p>
-          </div>
-        </div>
-      </div>
+      <cal-accueil/>
+      <router-link to="/Calendrier">Voir tout le calendrier</router-link>
+
     </div>
 
 
@@ -112,10 +56,12 @@
 
 <script>
 import Slider from "@/components/Slider";
+import calAccueil from "@/components/calAccueil";
 export default {
   name: 'Accueil',
   components: {
-    "Slider": Slider
+    "Slider": Slider,
+    "calAccueil": calAccueil
   }
 
 }

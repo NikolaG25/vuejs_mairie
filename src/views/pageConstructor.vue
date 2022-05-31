@@ -3,10 +3,7 @@
     <h1>{{ this.page.info_page.nom_de_la_page }}</h1>
 
     <div class="content">
-      <div class="bandeau">
-        <iframe id="myiFrame" class="myiFrame" width="480" height="600" src="https://player.centaure-systems.fr/embedded/1039951bfa96267e491fd0113608350bec05aeb4"></iframe>
-        <div class="clic"><h2>En un clic</h2></div>
-      </div>
+      <bandeau/>
 
       <div class="grid">
         <div class="zoneTxt" v-for="zone_txt in listeZoneTxt" :key="zone_txt.titre" :style="{'grid-row': zone_txt.place_sur_la_grille}">
@@ -335,9 +332,15 @@
 
 <script>
 import param from "@/param/param";
+import bandeau from "@/components/Bandeau";
 
 export default {
   name: "pageConstructor",
+
+  components: {
+    'bandeau': bandeau
+  },
+
   data () {
     return {
       page: {

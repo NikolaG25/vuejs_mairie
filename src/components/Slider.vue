@@ -35,21 +35,11 @@ export default {
     axios.get(param.host+'actualites')
       .then(response => {
         this.listeActu = response.data
-        console.log('liste actu', this.listeActu)
+        // console.log('liste actu', this.listeActu)
       }).catch(error => console.log(error))
 
-    // let divSlider = document.getElementsByClassName("actu")
-    //
-    // console.log('divSlider',divSlider)
-    // console.log("type", typeof divSlider)
-    //
-    // // let t = Array.from(divSlider)
-    // // console.log('t', t)
-    //
-    //
-    // let firstNews = divSlider.item(0)
-    // console.log('first news', firstNews)
   },
+
   updated() {
     let divSlider = document.getElementsByClassName("actu")
 

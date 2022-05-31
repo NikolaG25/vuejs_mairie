@@ -1,16 +1,17 @@
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v27/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVuEooCP.ttf) format('truetype');
+}
 :root {
   --principalcolor: #B50000;
 }
 body {
-  font-family: "Heebo ExtraLight", sans-serif;
+  font-family: 'Raleway', sans-serif;
   width: 100vw;
   overflow-x: hidden;
-}
-iframe * {
-  background-color: transparent;
-}
-.panneau_direct .player-element {
-  background-color: transparent;
 }
 header {
   background-color: var(--principalcolor);
@@ -34,13 +35,15 @@ header .blason {
 h1 {
   font-size: 3rem !important;
   text-align: center;
+  font-family: "Heebo ExtraLight", sans-serif;
 }
 h2 {
   font-size: 2.5rem;
   text-align: center;
+  letter-spacing: 1px;
 }
 p {
-  font-family: "Heebo Light", sans-serif;
+  font-family: 'Raleway Medium', sans-serif;
   font-size: 1.4rem;
 }
 .block {
@@ -80,6 +83,11 @@ main a {
   position: relative;
   padding-bottom: 2px;
 }
+@media (max-width: 900px) {
+  footer {
+    justify-content: left !important;
+  }
+}
 footer {
   margin-top: 75px;
   background-color: var(--principalcolor);
@@ -89,7 +97,7 @@ footer {
   justify-content: center;
   flex-wrap: wrap;
 }
-footer h1:after {
+footer a h1:after {
   content: '';
   border-top: white solid;
   border-top-width: 3px;
@@ -100,11 +108,30 @@ footer h1:after {
   left: 0;
   z-index: -1;
 }
-footer h1:hover:after {
+footer .contact_footer a:hover:after {
+  width: 100%;
+  transition: width 0.3s;
+}
+footer .contact_footer a {
+  font-family: "Heebo Light", sans-serif;
+  font-size: 1.4rem;
+  position: relative;
+  padding-bottom: 2px;
+}
+footer .contact_footer a:after {
+  content: '';
+  border-bottom: 2px solid white;
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s;
+}
+footer a h1:hover:after {
   border-top: 60px solid white;
   transition: border-top-width 0.3s;
 }
-footer h1:hover {
+footer a h1:hover {
   color: #000;
   transition: color 0.3s;
 }
@@ -126,6 +153,7 @@ footer div {
 }
 footer div h1 {
   margin-left: 0;
+  padding-left: 0;
 }
 #home {
   display: flex;
@@ -145,6 +173,14 @@ footer div h1 {
   flex-direction: column;
   width: 60%;
   margin: 50px 30px 0 30px;
+}
+#home .cal a {
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+#home .event:nth-child(n+5) {
+  display: none;
 }
 #home .actus {
   display: flex;
@@ -348,55 +384,6 @@ footer div h1 {
   font-size: 2rem;
   text-align: center;
 }
-.lab {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-textarea {
-  width: 100%;
-  height: 200px;
-  resize: vertical;
-  border: solid var(--principalcolor) 2px;
-  border-radius: 30px;
-  font-family: "Heebo SemiBold", sans-serif !important;
-  font-size: 1.5rem !important;
-  color: black !important;
-  padding: 10px;
-}
-input {
-  width: 100%;
-  height: 30px;
-  border: solid var(--principalcolor) 2px;
-  border-radius: 30px;
-}
-input[type="text"] {
-  font-family: "Heebo SemiBold", sans-serif;
-  font-size: 1.5rem;
-  color: black;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-input:focus {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-textarea:focus {
-  padding: 10px;
-}
-label {
-  font-family: "Heebo Light", sans-serif;
-  font-size: 2rem;
-  margin-top: 30px;
-  margin-bottom: 5px;
-}
-.req {
-  color: var(--principalcolor);
-  font-family: "Heebo SemiBold", sans-serif;
-}
-form {
-  width: 90%;
-}
 .bandeau div {
   width: 275px;
   height: 560px;
@@ -494,173 +481,6 @@ form {
   width: 100%;
   margin-bottom: 75px;
 }
-#history h2,
-#info_dial h2 {
-  font-size: 2.5rem;
-}
-#demarches_admin h2,
-#restaurants_bar h2,
-#associations h2,
-#commerces h2 {
-  font-size: 2rem;
-}
-#demarches_admin h3,
-#restaurants_bar h3,
-#associations h3,
-#commerces h3 {
-  font-size: 1.4rem;
-  font-family: "Heebo", sans-serif;
-  color: white;
-  text-align: center;
-  background-color: var(--principalcolor);
-  border-radius: 18px;
-  padding: 10px;
-  margin-top: 0;
-}
-#demarches_admin a,
-#restaurants_bar a,
-#associations a,
-#commerces a {
-  color: black !important;
-  font-family: "Heebo Light", sans-serif;
-  font-size: 1.3rem;
-  position: relative;
-  padding-bottom: 2px;
-}
-#demarches_admin .restaurant,
-#restaurants_bar .restaurant,
-#associations .restaurant,
-#commerces .restaurant {
-  height: max-content;
-}
-#demarches_admin .fiches_demarches,
-#restaurants_bar .fiches_demarches,
-#associations .fiches_demarches,
-#commerces .fiches_demarches,
-#demarches_admin .liste_restaurants,
-#restaurants_bar .liste_restaurants,
-#associations .liste_restaurants,
-#commerces .liste_restaurants,
-#demarches_admin .assos_socio,
-#restaurants_bar .assos_socio,
-#associations .assos_socio,
-#commerces .assos_socio,
-#demarches_admin .assos_sport,
-#restaurants_bar .assos_sport,
-#associations .assos_sport,
-#commerces .assos_sport,
-#demarches_admin .commerces,
-#restaurants_bar .commerces,
-#associations .commerces,
-#commerces .commerces,
-#demarches_admin .entreprises,
-#restaurants_bar .entreprises,
-#associations .entreprises,
-#commerces .entreprises,
-#demarches_admin .artisans,
-#restaurants_bar .artisans,
-#associations .artisans,
-#commerces .artisans,
-#demarches_admin .liste_pro_sante,
-#restaurants_bar .liste_pro_sante,
-#associations .liste_pro_sante,
-#commerces .liste_pro_sante {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-}
-#demarches_admin a:hover:after,
-#restaurants_bar a:hover:after,
-#associations a:hover:after,
-#commerces a:hover:after {
-  width: 100%;
-  transition: width 0.3s;
-}
-#demarches_admin a:after,
-#restaurants_bar a:after,
-#associations a:after,
-#commerces a:after {
-  content: '';
-  border-bottom: 2px solid var(--principalcolor);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  transition: width 0.3s;
-  padding-top: 3px;
-  width: 0;
-}
-#demarches_admin .fiche_demarche,
-#restaurants_bar .fiche_demarche,
-#associations .fiche_demarche,
-#commerces .fiche_demarche,
-#demarches_admin .restaurant,
-#restaurants_bar .restaurant,
-#associations .restaurant,
-#commerces .restaurant,
-#demarches_admin .asso,
-#restaurants_bar .asso,
-#associations .asso,
-#commerces .asso,
-#demarches_admin .com_art_entr,
-#restaurants_bar .com_art_entr,
-#associations .com_art_entr,
-#commerces .com_art_entr,
-#demarches_admin .pro_sante,
-#restaurants_bar .pro_sante,
-#associations .pro_sante,
-#commerces .pro_sante {
-  box-shadow: 0 4px 7px -3px black;
-  padding: 10px 20px;
-  width: 250px;
-  border-radius: 30px;
-  margin-right: 20px;
-  margin-bottom: 15px;
-}
-#demarches_admin .fiche_demarche ul,
-#restaurants_bar .fiche_demarche ul,
-#associations .fiche_demarche ul,
-#commerces .fiche_demarche ul,
-#demarches_admin .restaurant ul,
-#restaurants_bar .restaurant ul,
-#associations .restaurant ul,
-#commerces .restaurant ul,
-#demarches_admin .asso ul,
-#restaurants_bar .asso ul,
-#associations .asso ul,
-#commerces .asso ul,
-#demarches_admin .com_art_entr ul,
-#restaurants_bar .com_art_entr ul,
-#associations .com_art_entr ul,
-#commerces .com_art_entr ul,
-#demarches_admin .pro_sante ul,
-#restaurants_bar .pro_sante ul,
-#associations .pro_sante ul,
-#commerces .pro_sante ul {
-  list-style: none;
-  padding: 0;
-}
-#demarches_admin .fiche_demarche ul li,
-#restaurants_bar .fiche_demarche ul li,
-#associations .fiche_demarche ul li,
-#commerces .fiche_demarche ul li,
-#demarches_admin .restaurant ul li,
-#restaurants_bar .restaurant ul li,
-#associations .restaurant ul li,
-#commerces .restaurant ul li,
-#demarches_admin .asso ul li,
-#restaurants_bar .asso ul li,
-#associations .asso ul li,
-#commerces .asso ul li,
-#demarches_admin .com_art_entr ul li,
-#restaurants_bar .com_art_entr ul li,
-#associations .com_art_entr ul li,
-#commerces .com_art_entr ul li,
-#demarches_admin .pro_sante ul li,
-#restaurants_bar .pro_sante ul li,
-#associations .pro_sante ul li,
-#commerces .pro_sante ul li {
-  margin-bottom: 10px;
-}
 tr .heure {
   width: 35%;
 }
@@ -679,9 +499,6 @@ tr td {
   flex-direction: row;
   flex-wrap: wrap;
 }
-.infos_biblio {
-  margin-bottom: 75px;
-}
 .cal_manif {
   justify-content: normal;
   margin-top: 30px;
@@ -690,11 +507,6 @@ tr td {
 .cal_manif .event {
   margin-right: 20px;
   margin-bottom: 20px;
-}
-.recap_seance {
-  display: flex;
-  align-content: flex-start;
-  flex-wrap: wrap;
 }
 .service {
   border-radius: 30px;
@@ -713,14 +525,6 @@ tr td {
   text-align: center;
   font-size: 1.5rem !important;
 }
-.info_admin,
-.liste_info_pratiques,
-.liste_info_transport,
-.pdfs_urba {
-  display: flex;
-  flex-wrap: wrap;
-}
-.info_transport a,
 .fiche_lien a {
   margin-top: 10px;
 }

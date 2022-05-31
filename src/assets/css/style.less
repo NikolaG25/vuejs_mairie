@@ -1,24 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
 :root {
   --principalcolor: #B50000;
 }
 
 body {
-  font-family: "Heebo ExtraLight", sans-serif;
+  font-family: 'Raleway', sans-serif;
   width: 100vw;
   overflow-x: hidden;
-}
-
-iframe {
-  * {
-    background-color: transparent;
-  }
-}
-
-.panneau_direct {
-
-  .player-element {
-    background-color: transparent;
-  }
 }
 
 header {
@@ -45,15 +33,18 @@ header {
 h1 {
   font-size: 3rem !important;
   text-align: center;
+  font-family: "Heebo ExtraLight", sans-serif;
+
 }
 
 h2 {
   font-size: 2.5rem;
   text-align: center;
+  letter-spacing: 1px;
 }
 
 p {
-  font-family: "Heebo Light", sans-serif;
+  font-family: 'Raleway Medium', sans-serif;
   font-size: 1.4rem;
 }
 
@@ -101,6 +92,13 @@ main {
   }
 }
 
+@media (max-width: 900px) {
+  footer {
+    justify-content: left !important;
+
+  }
+}
+
 footer {
   margin-top: 75px;
   background-color: var(--principalcolor);
@@ -110,7 +108,7 @@ footer {
   justify-content: center;
   flex-wrap: wrap;
 
-  h1:after {
+  a h1:after {
     content: '';
     border-top: white solid;
     border-top-width: 3px;
@@ -122,13 +120,38 @@ footer {
     z-index: -1;
   }
 
-  h1:hover:after {
+
+  .contact_footer {
+    a:hover:after {
+      width: 100%;
+      transition: width .3s;
+    }
+
+    a {
+      font-family: "Heebo Light", sans-serif;
+      font-size: 1.4rem;
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    a:after {
+      content: '';
+      border-bottom: 2px solid white;
+      width: 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: width .3s;
+    }
+  }
+
+  a h1:hover:after {
     border-top: 60px solid white;
     transition: border-top-width .3s;
 
   }
 
-  h1:hover {
+  a h1:hover {
     color: #000;
     transition: color .3s;
   }
@@ -153,6 +176,7 @@ footer {
 
     h1 {
       margin-left: 0;
+      padding-left: 0;
     }
   }
 }
@@ -180,7 +204,17 @@ footer {
     width: 60%;
     margin: 50px 30px 0 30px;
 
+    a {
+      width: max-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
+
+  }
+
+  .event:nth-child(n+5) {
+    display: none;
   }
 
   .actus {
@@ -436,68 +470,6 @@ footer {
   }
 }
 
-.lab {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-textarea {
-  width: 100%;
-  height: 200px;
-  resize: vertical;
-  border: solid var(--principalcolor) 2px;
-  border-radius: 30px;
-  font-family: "Heebo SemiBold", sans-serif !important;
-  font-size: 1.5rem !important;
-  color: black !important;
-  padding: 10px;
-
-}
-
-input {
-  width: 100%;
-  height: 30px;
-  border: solid var(--principalcolor) 2px;
-  border-radius: 30px;
-
-}
-
-input[type="text"] {
-  font-family: "Heebo SemiBold", sans-serif;
-  font-size: 1.5rem;
-  color: black;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-input:focus {
-  padding-left: 10px;
-  padding-right: 10px;
-
-}
-
-textarea:focus {
-  padding: 10px;
-}
-
-label {
-  font-family: "Heebo Light", sans-serif;
-  font-size: 2rem;
-  margin-top: 30px;
-  margin-bottom: 5px;
-}
-
-.req {
-  color: var(--principalcolor);
-  font-family: "Heebo SemiBold", sans-serif;
-}
-
-form {
-  width: 90%;
-
-}
-
 .bandeau div {
   width: 275px;
   height: 560px;
@@ -610,90 +582,6 @@ form {
   margin-bottom: 75px;
 }
 
-
-#history h2, #info_dial h2 {
-  font-size: 2.5rem;
-}
-
-#demarches_admin, #restaurants_bar, #associations, #commerces {
-
-  h2 {
-    font-size: 2rem;
-
-  }
-
-  h3 {
-    font-size: 1.4rem;
-    font-family: "Heebo", sans-serif;
-    color: white;
-    text-align: center;
-    background-color: var(--principalcolor);
-    border-radius: 18px;
-    padding: 10px;
-    margin-top: 0;
-
-  }
-
-  a {
-    color: black !important;
-    font-family: "Heebo Light", sans-serif;
-    font-size: 1.3rem;
-    position: relative;
-    padding-bottom: 2px;
-  }
-
-  .restaurant {
-    height: max-content;
-  }
-
-  .fiches_demarches, .liste_restaurants, .assos_socio, .assos_sport, .commerces,
-  .entreprises, .artisans, .liste_pro_sante {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
-  }
-
-  a:hover:after {
-    width: 100%;
-    transition: width .3s;
-  }
-
-  a:after {
-    content: '';
-    border-bottom: 2px solid var(--principalcolor);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transition: width .3s;
-    padding-top: 3px;
-    width: 0;
-  }
-
-  .fiche_demarche, .restaurant, .asso, .com_art_entr, .pro_sante {
-    box-shadow: 0 4px 7px -3px black;
-    padding: 10px 20px;
-    width: 250px;
-    border-radius: 30px;
-    margin-right: 20px;
-    margin-bottom: 15px;
-
-    ul {
-      list-style: none;
-      padding: 0;
-
-
-      li {
-        margin-bottom: 10px;
-      }
-
-    }
-
-
-  }
-
-}
-
-
 tr {
 
   .heure {
@@ -718,12 +606,6 @@ tr {
   flex-wrap: wrap;
 }
 
-
-.infos_biblio {
-  margin-bottom: 75px;
-}
-
-
 .cal_manif {
   justify-content: normal;
   margin-top: 30px;
@@ -733,12 +615,6 @@ tr {
     margin-right: 20px;
     margin-bottom: 20px;
   }
-}
-
-.recap_seance {
-  display: flex;
-  align-content: flex-start;
-  flex-wrap: wrap;
 }
 
 .service {
@@ -760,13 +636,7 @@ tr {
   }
 }
 
-.info_admin, .liste_info_pratiques, .liste_info_transport, .pdfs_urba {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-
-.info_transport, .fiche_lien {
+.fiche_lien {
   a {
     margin-top: 10px;
   }

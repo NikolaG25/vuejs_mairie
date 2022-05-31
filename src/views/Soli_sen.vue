@@ -5,10 +5,7 @@
     </div>
 
     <div class="content">
-      <div class="bandeau">
-        <iframe id="myiFrame" class="myiFrame" width="480" height="600" src="https://player.centaure-systems.fr/embedded/1039951bfa96267e491fd0113608350bec05aeb4"></iframe>
-        <div class="clic"><h2>En un clic</h2></div>
-      </div>
+      <bandeau/>
       <div class="pages_vie_loc pages">
         <div class="lien_page" v-for="page in listePageSoliSen" :key="page.id">
           <router-link :to="{name : 'pageConstructorSoliSen', params : {id : page.id}}">
@@ -30,9 +27,14 @@
 
 <script>
 import param from "@/param/param";
+import bandeau from "@/components/Bandeau";
 
 export default {
   name: "SoliSen",
+
+  components: {
+    'bandeau': bandeau
+  },
 
   data () {
     return {
