@@ -121,7 +121,7 @@ export default {
     axios.get(param.host + 'info_pied_de_page')
       .then(response => {
           this.listeInfosFooter = response.data
-          console.log("liste info footer", this.listeInfosFooter)
+          // console.log("liste info footer", this.listeInfosFooter)
 
           for (let i = 0; i < this.listeInfosFooter.length; i++) {
             let type_bloc = this.listeInfosFooter[i].acf.type_zone;
@@ -135,8 +135,8 @@ export default {
 
           }
 
-          console.log('listeHoraires', this.listeInfoHoraires)
-          console.log('listeContact', this.listeInfoContact)
+          // console.log('listeHoraires', this.listeInfoHoraires)
+          // console.log('listeContact', this.listeInfoContact)
 
         // console.log('contact', this.listeInfoContact[0].acf)
         }

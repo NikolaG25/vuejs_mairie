@@ -263,11 +263,14 @@ footer div h1 {
 #home .actus .actu .text_actu h2,
 #home .actus .actu .text_actu p {
   margin-left: 20px;
+  width: 90%;
 }
 #home .actus .actu .text_actu .see_more {
-  margin-left: 0;
+  margin-left: auto;
   margin-right: 20px;
   text-align: end;
+  width: max-content;
+  position: relative;
 }
 #home .actus .actu .text_actu * {
   color: white;
@@ -759,6 +762,9 @@ tr td {
 .plan h2 {
   text-align: left;
 }
+.plan li {
+  width: max-content;
+}
 .plan a p {
   position: relative;
   padding-bottom: 3px;
@@ -768,5 +774,11 @@ tr td {
   position: relative;
   padding-bottom: 3px;
   width: max-content;
+}
+.text_actu a:after {
+  border: none!important;
+}
+.see_more:after {
+  border: none!important;
 }
 /*# sourceMappingURL=style.css.map */

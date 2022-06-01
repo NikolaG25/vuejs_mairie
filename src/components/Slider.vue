@@ -6,7 +6,7 @@
       <div class="text_actu">
         <h2>{{actu.acf.titre_de_lactu}}</h2>
         <p>{{actu.acf.description_de_lactu}}</p>
-        <p class="see_more">Voir plus ></p>
+        <router-link to="/Actu"><p class="see_more">Voir plus ></p></router-link>
       </div>
     </div>
     <img class="arrow_r arrows next" src="@/assets/img/icones/fleche_gauche.svg" alt="Actualité précédente">
@@ -96,6 +96,5 @@ export default {
 </script>
 
 <style scoped>
-
 
 </style>

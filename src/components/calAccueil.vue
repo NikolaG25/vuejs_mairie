@@ -24,38 +24,78 @@
 
 <script>
 import param from "@/param/param";
+import moment from 'moment'
 
 export default {
   name: "calAccueil",
 
   data() {
     return {
-      listeEvent: []
+      listeEvent: [],
     }
   },
 
   computed: {
     listeOrderByDate: function () {
       function compare(a, b) {
-        let date_a = a.acf.date.split('/')
-        let date_b = b.acf.date.split('/')
 
-        let da = date_a[2] + "-" + date_a[1] + "-" + date_a[0]
-        let db = date_b[2] + "-" + date_b[1] + "-" + date_b[0]
+        let nj_a = a.acf.n_jour
+        let mois_a = a.acf.mois
+        let annee_a = a.acf.annee
 
-        let d1 = new Date(da)
-        let d2 = new Date(b = db)
+        let nj_b = b.acf.n_jour
+        let mois_b = b.acf.mois
+        let annee_b = b.acf.annee
 
-        console.log('d1', d1)
-        console.log('d2', d2)
+        // console.log('nj', nj)
+        // console.log('mois', mois)
 
-        if (d1.getUTCMonth() > d2.getUTCMonth()) {
+        if(mois_a === 'Janvier')        mois_a = 'January'
+        if(mois_a === 'Février')        mois_a = 'February'
+        if(mois_a === 'Mars')           mois_a = 'March'
+        if(mois_a === 'Avril')          mois_a = 'April'
+        if(mois_a === 'Mai')            mois_a = 'May'
+        if(mois_a === 'Juin')           mois_a = 'June'
+        if(mois_a === 'Juillet')        mois_a = 'July'
+        if(mois_a === 'Août')           mois_a = 'August'
+        if(mois_a === 'Septembre')      mois_a = 'September'
+        if(mois_a === 'Octobre')        mois_a = 'October'
+        if(mois_a === 'Novembre')       mois_a = 'November'
+        if(mois_a === 'Décembre')       mois_a = 'December'
+
+        if(mois_b === 'Janvier')        mois_b = 'January'
+        if(mois_b === 'Février')        mois_b = 'February'
+        if(mois_b === 'Mars')           mois_b = 'March'
+        if(mois_b === 'Avril')          mois_b = 'April'
+        if(mois_b === 'Mai')            mois_b = 'May'
+        if(mois_b === 'Juin')           mois_b = 'June'
+        if(mois_b === 'Juillet')        mois_b = 'July'
+        if(mois_b === 'Août')           mois_b = 'August'
+        if(mois_b === 'Septembre')      mois_b = 'September'
+        if(mois_b === 'Octobre')        mois_b = 'October'
+        if(mois_b === 'Novembre')       mois_b = 'November'
+        if(mois_b === 'Décembre')       mois_b = 'December'
+
+
+
+
+        let ta = moment(annee_a+' ' + mois_a+ ' '+nj_a, 'YYYY MMM DD', 'en')
+        // console.log('ta', ta)
+        let tb = moment(annee_b+' ' + mois_b+ ' '+nj_b, 'YYYY MMM DD', 'en')
+        // console.log('tb', tb)
+
+        let da = new Date(ta)
+        console.log('da', da)
+        let db = new Date(tb)
+        console.log('db', db)
+
+        if (da.getUTCMonth() > db.getUTCMonth()) {
           return 1
-        } else if (d1.getUTCMonth() < d2.getUTCMonth()) {
+        } else if (da.getUTCMonth() < db.getUTCMonth()) {
           return -1
         } else {
           //same month
-          return d1.getUTCDate() - d2.getUTCDate()
+          return da.getUTCDate() - db.getUTCDate()
         }
       }
 
@@ -69,8 +109,8 @@ export default {
         this.listeEvent = response.data
         console.log('listeEvent', this.listeEvent)
       }).catch(error => console.log(error))
+  },
 
-  }
 }
 </script>
 

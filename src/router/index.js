@@ -18,6 +18,8 @@ import planSite             from "../views/planSite";
 
 import calendar             from "../views/Calendar";
 
+import Actu                 from "../views/Actu";
+
 Vue.use(Router)
 
 export default new Router({
@@ -37,6 +39,8 @@ export default new Router({
     {path: '/mentionsLegales',                  name: 'mentionsLegales',        component: mentionsLegales},
 
     {path: '/Calendrier',                       name: 'Calendrier',             component: calendar},
+
+    {path: '/Actu',                             name: 'Actu',             component: Actu},
 
     {path: '/Enfance/:id', name:'pageConstructorEnfance', component: pageConstructor},
     {path: '/Village/:id', name:'pageConstructorVillage', component: pageConstructor},
