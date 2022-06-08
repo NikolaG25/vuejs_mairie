@@ -71,9 +71,6 @@
             </router-link>
           </li>
         </ul>
-        <router-link to="/Contact">
-          <h2>Contact</h2>
-        </router-link>
 
 
       </div>
@@ -106,42 +103,42 @@ export default {
       .then(response => {
         // console.log('response', response.data)
         this.listePageMairie = response.data
-        console.log('liste page mairie', this.listePageMairie)
+        // console.log('liste page mairie', this.listePageMairie)
       }).catch(error => console.log(error))
 
     axios.get(param.host+"pages_enfance")
       .then(response => {
         // console.log('response', response.data)
         this.listePageEnfance = response.data
-        console.log('liste page enfance', this.listePageEnfance)
+        // console.log('liste page enfance', this.listePageEnfance)
       }).catch(error => console.log(error))
 
     axios.get(param.host+"pages_demarches")
       .then(response => {
         // console.log('response', response.data)
         this.listePageDemarches = response.data
-        console.log('liste page démarches', this.listePageDemarches)
+        // console.log('liste page démarches', this.listePageDemarches)
       }).catch(error => console.log(error))
 
     axios.get(param.host+"pages_solidarite_sen")
       .then(response => {
         // console.log('response', response.data)
         this.listePageSoliSen = response.data
-        console.log('liste page soli', this.listePageSoliSen)
+        // console.log('liste page soli', this.listePageSoliSen)
       }).catch(error => console.log(error))
 
     axios.get(param.host+"pages_vie_loc")
       .then(response => {
         // console.log('response', response.data)
         this.listePageVieLoc = response.data
-        console.log('liste page village', this.listePageVieLoc)
+        // console.log('liste page village', this.listePageVieLoc)
       }).catch(error => console.log(error))
 
     axios.get(param.host+"pages_village")
       .then(response => {
         // console.log('response', response.data)
         this.listePageVillage = response.data
-        console.log('liste page village', this.listePageVillage)
+        // console.log('liste page village', this.listePageVillage)
       }).catch(error => console.log(error))
 
   }

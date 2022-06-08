@@ -12,7 +12,8 @@
         </div>
         <div class="info_cal">
           <h2>{{ event.acf.intitule_evenement }}</h2>
-          <p>{{ event.acf.horaire_lieu }}</p>
+          <p v-if="event.acf.lieu_evenement !==''">Lieu : {{ event.acf.lieu_evenement }}</p>
+          <p v-if="event.acf.horaire_evenement !==''">Horaires : {{event.acf.horaire_evenement}}</p>
         </div>
       </div>
 
@@ -85,9 +86,9 @@ export default {
         // console.log('tb', tb)
 
         let da = new Date(ta)
-        console.log('da', da)
+        // console.log('da', da)
         let db = new Date(tb)
-        console.log('db', db)
+        // console.log('db', db)
 
         if (da.getUTCMonth() > db.getUTCMonth()) {
           return 1
@@ -107,7 +108,7 @@ export default {
     axios.get(param.host + "calendrier")
       .then(response => {
         this.listeEvent = response.data
-        console.log('listeEvent', this.listeEvent)
+        // console.log('listeEvent', this.listeEvent)
       }).catch(error => console.log(error))
   },
 

@@ -149,4 +149,8 @@
   background-color: white;
   transition: color 0.3s;
 }
+.nav_mob .menu a {
+  padding-left: 6px;
+  padding-right: 6px;
+}
 /*# sourceMappingURL=menu.css.map */

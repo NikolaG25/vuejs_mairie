@@ -47,7 +47,7 @@ export default {
       .then(response => {
         // console.log('response', response.data)
         this.listePageSoliSen = response.data
-        console.log('liste page soli', this.listePageSoliSen)
+        // console.log('liste page soli', this.listePageSoliSen)
       }).catch(error => console.log(error))
 
   }

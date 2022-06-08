@@ -44,7 +44,7 @@ export default {
       .then(response => {
         // console.log('response', response.data)
         this.listePageEnfance = response.data
-        console.log('liste page enfance', this.listePageEnfance)
+        // console.log('liste page enfance', this.listePageEnfance)
       }).catch(error => console.log(error))
 
   }

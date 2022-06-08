@@ -46,7 +46,7 @@ export default {
       .then(response => {
         // console.log('response', response.data)
         this.listePageVieLoc = response.data
-        console.log('liste page village', this.listePageVieLoc)
+        // console.log('liste page village', this.listePageVieLoc)
       }).catch(error => console.log(error))
 
   }

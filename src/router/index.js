@@ -9,7 +9,6 @@ import Demarches            from "../views/Demarches";
 import Enfance              from "../views/Enfance";
 import Vie_loc              from "../views/Vie_loc";
 import Soli_sen             from "../views/Soli_sen";
-import Contact              from "../views/Contact";
 
 import pageConstructor      from "../views/pageConstructor";
 
@@ -33,7 +32,6 @@ export default new Router({
     {path: '/Enfance',                          name: 'Enfance',                component: Enfance},
     {path: '/VieLocale',                        name: 'VieLocale',              component: Vie_loc},
     {path: '/SoliSen',                          name: 'SoliSen',                component: Soli_sen},
-    {path: '/Contact',                          name: 'Contact',                component: Contact},
 
     {path: '/PlanDuSite',                       name: 'PlanDuSite',             component: planSite},
     {path: '/mentionsLegales',                  name: 'mentionsLegales',        component: mentionsLegales},

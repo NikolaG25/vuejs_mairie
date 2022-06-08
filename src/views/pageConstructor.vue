@@ -158,7 +158,8 @@
                 </div>
                 <div class="info_cal">
                   <h2>{{event.nom_evenement}}</h2>
-                  <h2>Lieu : {{event.lieu}}- Horaires : {{event.horaires}}</h2>
+                  <p v-if="event.lieu !== ''">Lieu : {{event.lieu}} </p>
+                  <p v-if="event.horaires !==''">Horaires : {{event.horaires}}</p>
                 </div>
               </div>
 
@@ -372,16 +373,16 @@ export default {
 
   created() {
     this.page.id = this.$route.params.id
-    console.log('titre page', this.page.id)
+    // console.log('titre page', this.page.id)
 
-    axios.get(param.host+"pages_enfance/"+this.page.id)
+    axios.get(param.host+"pages/"+this.page.id)
       .then(response => {
         this.page = response.data
-        console.log('page', this.page)
+        // console.log('page', this.page)
 
         this.page.info_page = response.data.acf.info_page
 
-        console.log('info page', this.page.info_page)
+        // console.log('info page', this.page.info_page)
 
         this.page.contenu_page = response.data.acf.contenu_de_la_page.bloc
 
@@ -478,7 +479,7 @@ export default {
         // console.log('listeTarif', this.listeZoneTarif)
         // console.log('listeVerticale', this.listeZoneVerticale)
         // console.log('listeListe', this.listeZoneListe)
-        console.log('listeCarte', this.listeZoneCarte)
+        // console.log('listeCarte', this.listeZoneCarte)
 
 
 

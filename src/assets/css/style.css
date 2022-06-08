@@ -316,7 +316,7 @@ footer div h1 {
 .calendar .event {
   transition: transform 0.3s;
   min-width: 200px;
-  height: 140px;
+  max-height: 160px;
   border-radius: 30px;
   box-shadow: 0 4px 7px -3px black;
   margin-bottom: 50px;
@@ -324,6 +324,9 @@ footer div h1 {
   width: 300px;
   margin-right: 10px;
   margin-left: 10px;
+}
+.calendar .event h2 {
+  margin-top: 0;
 }
 .calendar .event .date {
   padding-top: 1px;

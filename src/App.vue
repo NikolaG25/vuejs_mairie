@@ -10,26 +10,23 @@
         <div class="menu">
 
           <ul>
-            <li>
+            <li onclick="document.documentElement.classList.toggle('menu-open')">
               <router-link to="/Village" class="link_header">Votre village</router-link>
             </li>
-            <li>
+            <li onclick="document.documentElement.classList.toggle('menu-open')">
               <router-link to="/Mairie" class="link_header">Votre mairie</router-link>
             </li>
-            <li>
+            <li onclick="document.documentElement.classList.toggle('menu-open')">
               <router-link to="/Demarches" class="link_header">Vos démarches</router-link>
             </li>
-            <li>
+            <li onclick="document.documentElement.classList.toggle('menu-open')">
               <router-link to="/Enfance" class="link_header">Enfance/jeunesse</router-link>
             </li>
-            <li>
+            <li onclick="document.documentElement.classList.toggle('menu-open')">
               <router-link to="/VieLocale" class="link_header">Vie locale</router-link>
             </li>
-            <li>
+            <li onclick="document.documentElement.classList.toggle('menu-open')">
               <router-link to="/SoliSen" class="link_header">Solidarité/seniors</router-link>
-            </li>
-            <li>
-              <router-link to="/Contact" class="link_header">Contact</router-link>
             </li>
           </ul>
 
@@ -55,9 +52,6 @@
           </li>
           <li>
             <router-link class="link_soli link_desk" to="/SoliSen">Solidarité/seniors</router-link>
-          </li>
-          <li>
-            <router-link class="link_contact link_desk" to="/Contact">Contact</router-link>
           </li>
         </ul>
 
@@ -113,6 +107,12 @@ export default {
       listeInfosFooter: [],
       listeInfoContact: [],
       listeInfoHoraires: []
+    }
+  },
+
+  methods: {
+    testlog: function () {
+      document.documentElement.classList.toggle("menu-open")
     }
   },
 

@@ -41,7 +41,7 @@ export default {
     axios.get(param.host+'actualites')
       .then(response => {
         this.listeActu = response.data
-        console.log('liste actu', this.listeActu)
+        // console.log('liste actu', this.listeActu)
       }).catch(error => console.log(error))
   }
 }
