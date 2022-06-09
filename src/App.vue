@@ -110,12 +110,6 @@ export default {
     }
   },
 
-  methods: {
-    testlog: function () {
-      document.documentElement.classList.toggle("menu-open")
-    }
-  },
-
   created() {
 
     axios.get(param.host + 'info_pied_de_page')

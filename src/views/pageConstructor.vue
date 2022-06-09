@@ -10,7 +10,7 @@
 
           <div class="bloc_txt" v-for="bloc_txt in zone_txt.bloc_de_texte" :key="bloc_txt.titre">
             <h2>{{bloc_txt.titre}}</h2>
-            <p>{{bloc_txt.paragraphe}}</p>
+            <p v-for="paragraphe in bloc_txt.paragraphes">{{paragraphe.paragraphe}}</p>
           </div>
         </div>
 
@@ -210,7 +210,7 @@
 
         <div class="zoneTabl" v-for="zone_tableau in listeZoneTableau" :style="{'grid-row': zone_tableau.place_sur_la_grille}">
           <div class="bloc_tabl" v-for="bloc_tableau in zone_tableau.bloc_tableau">
-            <table class="tableau" v-for="tableau in bloc_tableau.tableau">
+            <table class="tableau" v-for="tableau in bloc_tableau.tableau" cellpadding="0" width="100%">
               <tr v-for="lignes in tableau.lignes">
                 <td v-for="col in lignes.ligne">
                   <p v-for="para_tabl in col.colonne">{{para_tabl.contenu_case}}</p>
@@ -485,6 +485,25 @@ export default {
 
       }).catch(error => console.log(error))
 
+  },
+
+  updated() {
+    let tr = document.querySelectorAll('.tableau tr')
+    console.log('tr', tr)
+
+    tr.forEach(el => {
+      let childCount = el.childElementCount
+      console.log('nbr enfant',childCount)
+      let child = el.querySelectorAll('td')
+      let w = 100 / childCount
+      console.log('width', w +'%')
+      console.log('child', child)
+
+      child.forEach(ch => {
+        ch.style.width = w + '%'
+
+      })
+    })
   }
 
 }

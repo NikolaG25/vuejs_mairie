@@ -529,6 +529,10 @@ footer {
     display: none;
   }
 
+  .grid {
+    width: 100%!important;
+  }
+
   .pages {
     justify-content: center;
   }
@@ -715,12 +719,16 @@ tr {
   justify-content: center;
 }
 
+@media (max-width: 500px) {
+  td p {
+    font-size: 1.2rem!important;
+  }
+}
+
 .tableau {
   border-collapse: collapse;
-
   tr {
-    border: 2px solid black;
-
+    display: flex;
   }
 
   td {
@@ -786,6 +794,7 @@ tr {
 .grid {
   display: grid;
   grid-auto-flow: row;
+  width: 70%;
   grid-template-rows: max-content;
 
   > div {
