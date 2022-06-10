@@ -61,7 +61,7 @@
               <h2>Contact</h2>
               <p>{{bloc_contact.nom_de_la_personne}}</p>
             <p>{{bloc_contact.adresse}}</p>
-              <a v-for="mail in bloc_contact.adresses_mail" :href="'mailto:'+mail.adresse_mail">{{mail.adresse_mail}}</a>
+              <p>Email :<a v-for="mail in bloc_contact.adresses_mail" :href="'mailto:'+mail.adresse_mail">{{mail.adresse_mail}}</a></p>
 
               <p>Téléphone :
                 <a v-for="tel in bloc_contact.numeros_tel" :href="'tel:'+tel.numero_tel">{{tel.numero_tel}} | </a>

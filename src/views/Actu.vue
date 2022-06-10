@@ -10,7 +10,11 @@
         <div class="actu" v-for="actu in this.listeActu" :key="actu.id">
           <h2>{{actu.acf.titre_de_lactu}}</h2>
           <div class="content_actu">
-            <p v-for="txt in actu.acf.textes_de_lactu">{{txt.texte_de_lactu}}</p>
+            <div class="txt_actu">
+              <p v-for="txt in actu.acf.textes_de_lactu">{{txt.texte_de_lactu}}</p>
+              <p v-for="lien in actu.acf.liens_actu">{{lien.phrase_avant_le_lien}}<a :href="lien.url_lien">{{lien.texte_du_lien}}</a></p>
+            </div>
+
             <img class="card_shadow" :src="actu.acf.image_de_lactu.url" :alt="actu.acf.titre_de_lactu">
           </div>
 
@@ -60,7 +64,7 @@ export default {
     margin: 20px;
     padding: 0;
   }
-  .content_actu p {
+  .txt_actu {
     width: 60%;
   }
 
